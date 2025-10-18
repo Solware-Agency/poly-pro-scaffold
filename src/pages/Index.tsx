@@ -39,8 +39,7 @@ const Index = () => {
           className="absolute inset-0 w-full h-full object-cover"
           poster={heroImage}
         >
-          <source src="/video-hero.mp4" type="video/mp4" />
-          <source src="/video-hero.webm" type="video/webm" />
+          <source src="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Video_polypack.mp4" type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />

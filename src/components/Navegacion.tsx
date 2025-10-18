@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import logoPolypack from "@/assets/logo-polypack-new.webp";
 import { useLanguage } from "@/context/LanguageContext";
 import { LanguageSelector } from "./LanguageSelector";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 const SCROLL_THRESHOLD = 50;
 
@@ -10,6 +11,7 @@ const Navegacion = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
+  const activeSection = useActiveSection(["inicio", "nosotros", "productos", "contacto"]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +31,11 @@ const Navegacion = () => {
 
   const toggleMenu = () => setMenuAbierto(!menuAbierto);
   const cerrarMenu = () => setMenuAbierto(false);
+
+  const isActive = (href: string) => {
+    const sectionId = href.replace('#', '');
+    return activeSection === sectionId;
+  };
 
   const navClasses = `fixed top-0 left-0 right-0 z-header ${
     scrolled ? 'glass-surface' : 'glass-transparent'
@@ -75,7 +82,9 @@ const Navegacion = () => {
               <a
                 key={enlace.nombre}
                 href={enlace.href}
-                className={`font-medium transition-all duration-500 story-link ${textClasses}`}
+                className={`font-medium transition-all duration-500 story-link ${textClasses} ${
+                  isActive(enlace.href) ? 'story-link-active' : ''
+                }`}
               >
                 {enlace.nombre}
               </a>
@@ -100,7 +109,9 @@ const Navegacion = () => {
                   key={enlace.nombre}
                   href={enlace.href}
                   onClick={cerrarMenu}
-                  className={mobileLinkClasses}
+                  className={`${mobileLinkClasses} ${
+                    isActive(enlace.href) ? 'mobile-link-active' : ''
+                  }`}
                 >
                   {enlace.nombre}
                 </a>

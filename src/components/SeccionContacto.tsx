@@ -5,33 +5,48 @@ import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { validateContactForm, type ContactFormData } from "@/lib/validations";
+
+const CONTACT_INFO = {
+  phone: "+584129395171",
+  email: "administracion@plasticospolypack.com",
+  instagram: "https://instagram.com/polypack",
+  instagramHandle: "@polypack",
+  location: "Zona Industrial, Venezuela",
+  schedule: {
+    weekdays: "Lunes a Viernes: 8:00 AM - 5:00 PM",
+    saturday: "Sábados: 8:00 AM - 12:00 PM"
+  }
+};
 
 const SeccionContacto = () => {
   const { t } = useLanguage();
-  const [nombre, setNombre] = useState("");
-  const [email, setEmail] = useState("");
-  const [mensaje, setMensaje] = useState("");
-  
+  const [formData, setFormData] = useState<ContactFormData>({
+    nombre: "",
+    email: "",
+    mensaje: ""
+  });
+
+  const handleInputChange = (field: keyof ContactFormData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const resetForm = () => {
+    setFormData({ nombre: "", email: "", mensaje: "" });
+  };
+
   const manejarEnvio = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validación básica
-    if (!nombre.trim() || !email.trim() || !mensaje.trim()) {
-      toast.error("Por favor completa todos los campos");
+
+    const validation = validateContactForm(formData);
+
+    if (!validation.isValid) {
+      toast.error(validation.error);
       return;
     }
-    
-    // Validación email
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      toast.error("Por favor ingresa un email válido");
-      return;
-    }
-    
-    // Aquí iría la lógica de envío
+
     toast.success("Mensaje enviado. Nos pondremos en contacto pronto.");
-    setNombre("");
-    setEmail("");
-    setMensaje("");
+    resetForm();
   };
   
   return (
@@ -61,25 +76,25 @@ const SeccionContacto = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Ubicación</p>
-                    <p className="text-muted-foreground">Zona Industrial, Venezuela</p>
+                    <p className="text-muted-foreground">{CONTACT_INFO.location}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="p-2 bg-primary/10 rounded-lg">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Teléfono</p>
-                    <a 
-                      href="tel:+584129395171" 
+                    <a
+                      href={`tel:${CONTACT_INFO.phone}`}
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       +58 412-9395171
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="p-2 bg-primary/10 rounded-lg">
                     <Mail className="w-5 h-5 text-primary" />
@@ -87,27 +102,27 @@ const SeccionContacto = () => {
                   <div>
                     <p className="font-semibold text-foreground">Email</p>
                     <a
-                      href="mailto:administracion@plasticospolypack.com"
+                      href={`mailto:${CONTACT_INFO.email}`}
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      administracion@plasticospolypack.com
+                      {CONTACT_INFO.email}
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="p-2 bg-primary/10 rounded-lg">
                     <Instagram className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Instagram</p>
-                    <a 
-                      href="https://instagram.com/polypack" 
-                      target="_blank" 
+                    <a
+                      href={CONTACT_INFO.instagram}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary-glow story-link"
                     >
-                      @polypack
+                      {CONTACT_INFO.instagramHandle}
                     </a>
                   </div>
                 </div>
@@ -116,8 +131,8 @@ const SeccionContacto = () => {
             
             <div className="neuo-card p-6 transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1">
               <h4 className="font-bold text-lg mb-2 text-foreground">Horario de Atención</h4>
-              <p className="text-muted-foreground">Lunes a Viernes: 8:00 AM - 5:00 PM</p>
-              <p className="text-muted-foreground">Sábados: 8:00 AM - 12:00 PM</p>
+              <p className="text-muted-foreground">{CONTACT_INFO.schedule.weekdays}</p>
+              <p className="text-muted-foreground">{CONTACT_INFO.schedule.saturday}</p>
             </div>
           </div>
           
@@ -135,8 +150,8 @@ const SeccionContacto = () => {
                 <Input
                   id="nombre"
                   type="text"
-                  value={nombre}
-                  onChange={(e) => setNombre(e.target.value)}
+                  value={formData.nombre}
+                  onChange={(e) => handleInputChange("nombre", e.target.value)}
                   placeholder={t.contact.name}
                   className="w-full"
                 />
@@ -149,8 +164,8 @@ const SeccionContacto = () => {
                 <Input
                   id="email"
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formData.email}
+                  onChange={(e) => handleInputChange("email", e.target.value)}
                   placeholder={t.contact.email}
                   className="w-full"
                 />
@@ -162,8 +177,8 @@ const SeccionContacto = () => {
                 </label>
                 <Textarea
                   id="mensaje"
-                  value={mensaje}
-                  onChange={(e) => setMensaje(e.target.value)}
+                  value={formData.mensaje}
+                  onChange={(e) => handleInputChange("mensaje", e.target.value)}
                   placeholder={t.contact.message}
                   rows={5}
                   className="w-full resize-none"

@@ -70,7 +70,7 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
               {t.about.title}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title">
               {t.about.subtitle}
             </p>
           </div>
@@ -91,7 +91,7 @@ const Index = () => {
 
               <div className="space-y-4">
                 <div className="neuo-card p-6 transition-all duration-300 hover:scale-[1.02]">
-                  <h3 className="text-xl font-bold mb-2 text-foreground">
+                  <h3 className="text-xl font-bold mb-2 text-foreground fade-in-title">
                     {t.about.mission}
                   </h3>
                   <p className="text-muted-foreground">
@@ -100,7 +100,7 @@ const Index = () => {
                 </div>
 
                 <div className="neuo-card p-6 transition-all duration-300 hover:scale-[1.02]">
-                  <h3 className="text-xl font-bold mb-2 text-foreground">
+                  <h3 className="text-xl font-bold mb-2 text-foreground fade-in-title">
                     {t.about.vision}
                   </h3>
                   <p className="text-muted-foreground">
@@ -108,14 +108,6 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="neuo-card p-6 transition-all duration-300 hover:scale-[1.02]">
-                  <h3 className="text-xl font-bold mb-2 text-foreground">
-                    {t.about.values}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {t.about.valuesText}
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -124,7 +116,7 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
               {t.features.title}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title">
               {t.features.subtitle}
             </p>
           </div>
@@ -185,7 +177,7 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
               {t.products.title}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title">
               {t.products.subtitle}
             </p>
           </div>

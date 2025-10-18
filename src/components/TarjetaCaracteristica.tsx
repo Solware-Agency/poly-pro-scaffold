@@ -11,7 +11,7 @@ interface TarjetaCaracteristicaProps {
 const BASE_CLASSES = "p-6 rounded-lg transition-[transform,box-shadow,background-color] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1";
 const ICON_CONTAINER_CLASSES = "mb-4 inline-flex p-3 bg-primary/10 rounded-lg transition-transform duration-300 hover:scale-110";
 const ICON_CLASSES = "w-6 h-6 text-primary";
-const TITLE_CLASSES = "text-xl font-bold mb-2 text-foreground";
+const TITLE_CLASSES = "text-xl font-bold mb-2 text-foreground fade-in-title";
 const DESCRIPTION_CLASSES = "text-muted-foreground leading-relaxed";
 
 const TarjetaCaracteristica = ({

@@ -52,7 +52,7 @@ const SeccionContacto = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
             {t.contact.title}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title">
             {t.contact.subtitle}
           </p>
         </div>
@@ -61,7 +61,7 @@ const SeccionContacto = () => {
           {/* Información de contacto */}
           <div className="space-y-6">
             <div className="glass-surface p-6 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1">
-              <h3 className="text-2xl font-bold mb-6 text-foreground">
+              <h3 className="text-2xl font-bold mb-6 text-foreground fade-in-title">
                 {t.contact.info.title}
               </h3>
               
@@ -134,7 +134,7 @@ const SeccionContacto = () => {
           
           {/* Formulario */}
           <div className="glass-surface p-6 md:p-8 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.01] hover:shadow-xl">
-            <h3 className="text-2xl font-bold mb-6 text-foreground">
+            <h3 className="text-2xl font-bold mb-6 text-foreground fade-in-title">
               {t.contact.send}
             </h3>
 

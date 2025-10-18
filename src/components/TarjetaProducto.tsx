@@ -25,7 +25,7 @@ const TarjetaProducto = ({ titulo, descripcion, especificaciones, imagen }: Tarj
         </div>
       )}
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-3 text-foreground">
+        <h3 className="text-2xl font-bold mb-3 text-foreground fade-in-title">
           {titulo}
         </h3>
         <p className="text-muted-foreground mb-4">

@@ -1,10 +1,9 @@
-import { Factory, Layers, ShieldCheck, Users, Recycle, ArrowRight } from "lucide-react";
+import { Factory, Layers, ShieldCheck, Users, Recycle } from "lucide-react";
 import Navegacion from "@/components/Navegacion";
 import BotonWhatsApp from "@/components/BotonWhatsApp";
 import TarjetaCaracteristica from "@/components/TarjetaCaracteristica";
 import TarjetaProducto from "@/components/TarjetaProducto";
 import SeccionContacto from "@/components/SeccionContacto";
-import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
 import heroImage from "@/assets/factory-hero.webp";
 import extrusionImage from "@/assets/factory-extrusion.webp";
@@ -24,46 +23,35 @@ const Index = () => {
       
       {/* Hero Section */}
       <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
-        {/* Imagen de fondo con overlay */}
+        {/* Video de fondo */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="Planta industrial POLYPACK"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster={heroImage}
             className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/80 to-primary/70" />
+            aria-label="Video de planta industrial POLYPACK"
+          >
+            <source
+              src="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Video_polypack.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/60 via-secondary/50 to-primary/40" />
         </div>
-        
+
         {/* Contenido Hero */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-6 animate-fade-up">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight px-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight px-2 drop-shadow-2xl">
               {t.hero.title}
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-2xl mx-auto px-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-2xl mx-auto px-4 drop-shadow-lg">
               {t.hero.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button 
-                size="lg" 
-                variant="hero"
-                className="text-lg px-8 py-6"
-                asChild
-              >
-                <a href="#productos">
-                  {t.products.cta}
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="glass"
-                className="text-lg px-8 py-6"
-                asChild
-              >
-                <a href="#contacto">{t.hero.cta}</a>
-              </Button>
-            </div>
           </div>
         </div>
       </section>

@@ -91,8 +91,8 @@ const Index = () => {
             </div>
             
             <div className="glass-surface p-8 md:p-12 rounded-lg relative overflow-hidden">
-              <div 
-                className="absolute inset-0 opacity-5 bg-cover bg-center"
+              <div
+                className="absolute inset-0 opacity-30 bg-cover bg-center"
                 style={{ backgroundImage: `url(${nosotrosImage})` }}
               />
               <div className="prose prose-lg max-w-none relative z-10">

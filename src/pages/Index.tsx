@@ -87,7 +87,7 @@ const Index = () => {
             </div>
 
             <div className="space-y-6">
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed text-justified">
                 {t.about.description}
               </p>
 
@@ -96,7 +96,7 @@ const Index = () => {
                   <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground fade-in-title">
                     {t.about.mission}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground">
+                  <p className="text-sm sm:text-base text-muted-foreground text-justified">
                     {t.about.missionText}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ const Index = () => {
                   <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground fade-in-title">
                     {t.about.vision}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground">
+                  <p className="text-sm sm:text-base text-muted-foreground text-justified">
                     {t.about.visionText}
                   </p>
                 </div>

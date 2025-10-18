@@ -398,4 +398,10 @@
   .hover-smooth:hover {
     transform: translateY(-4px);
   }
+
+  /* Text justification utility */
+  .text-justified {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 }

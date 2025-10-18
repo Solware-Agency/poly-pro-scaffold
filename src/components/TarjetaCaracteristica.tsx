@@ -12,7 +12,7 @@ const BASE_CLASSES = "p-4 sm:p-6 rounded-lg transition-[transform,box-shadow,bac
 const ICON_CONTAINER_CLASSES = "mb-3 sm:mb-4 inline-flex p-2 sm:p-3 bg-primary/10 rounded-lg transition-transform duration-300 hover:scale-110";
 const ICON_CLASSES = "w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0";
 const TITLE_CLASSES = "text-lg sm:text-xl font-bold mb-2 text-foreground fade-in-title break-words leading-tight";
-const DESCRIPTION_CLASSES = "text-sm sm:text-base text-muted-foreground leading-relaxed break-words";
+const DESCRIPTION_CLASSES = "text-sm sm:text-base text-muted-foreground leading-relaxed break-words text-justified";
 
 const TarjetaCaracteristica = ({
   icono: Icono,

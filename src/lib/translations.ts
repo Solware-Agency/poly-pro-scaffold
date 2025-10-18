@@ -124,7 +124,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       title: 'Sobre POLYPACK',
       subtitle: 'Líderes en fabricación de empaques plásticos',
-      description: 'POLYPACK es una empresa venezolana con más de 30 años de experiencia en la fabricación de empaques plásticos de alta calidad. Nos especializamos en películas tubulares de polietileno para diversos sectores industriales.',
+      description: 'POLYPACK es una empresa venezolana con más de 30 años de experiencia en la distribución de empaques plásticos de alta calidad. Nos especializamos en películas tubulares de polietileno para diversos sectores industriales.',
       mission: 'Nuestra Misión',
       missionText: 'Fabricar empaques plásticos de excelente calidad que superen las expectativas de nuestros clientes, utilizando tecnología de punta y procesos sostenibles.',
       vision: 'Nuestra Visión',
@@ -227,7 +227,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       title: 'About POLYPACK',
       subtitle: 'Leaders in plastic packaging manufacturing',
-      description: 'POLYPACK is a Venezuelan company with over 30 years of experience in manufacturing high-quality plastic packaging. We specialize in polyethylene tubular films for various industrial sectors.',
+      description: 'POLYPACK is a Venezuelan company with over 30 years of experience in distributing high-quality plastic packaging. We specialize in polyethylene tubular films for various industrial sectors.',
       mission: 'Our Mission',
       missionText: 'To manufacture excellent quality plastic packaging that exceeds our customers\' expectations, using cutting-edge technology and sustainable processes.',
       vision: 'Our Vision',

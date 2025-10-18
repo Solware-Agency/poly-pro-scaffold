@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logoPolypack from "@/assets/logo-polypack.webp";
+import logoPolypack from "@/assets/logo-polypack-new.webp";
 
 const Navegacion = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);

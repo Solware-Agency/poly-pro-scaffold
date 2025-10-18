@@ -5,10 +5,14 @@ import TarjetaCaracteristica from "@/components/TarjetaCaracteristica";
 import TarjetaProducto from "@/components/TarjetaProducto";
 import SeccionContacto from "@/components/SeccionContacto";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-polypack.jpg";
-import extrusionImage from "@/assets/extrusion-process.jpg";
-import productosImage from "@/assets/productos-bolsas.jpg";
-import logoPolypack from "@/assets/logo-polypack.webp";
+import heroImage from "@/assets/factory-hero.webp";
+import extrusionImage from "@/assets/factory-extrusion.webp";
+import nosotrosImage from "@/assets/factory-nosotros.webp";
+import product1Image from "@/assets/product-1.webp";
+import product2Image from "@/assets/product-2.webp";
+import product3Image from "@/assets/product-3.webp";
+import galleryImage from "@/assets/factory-gallery.webp";
+import logoPolypack from "@/assets/logo-polypack-new.webp";
 
 const Index = () => {
   return (
@@ -98,8 +102,12 @@ const Index = () => {
               />
             </div>
             
-            <div className="glass-surface p-8 md:p-12 rounded-lg">
-              <div className="prose prose-lg max-w-none">
+            <div className="glass-surface p-8 md:p-12 rounded-lg relative overflow-hidden">
+              <div 
+                className="absolute inset-0 opacity-5 bg-cover bg-center"
+                style={{ backgroundImage: `url(${nosotrosImage})` }}
+              />
+              <div className="prose prose-lg max-w-none relative z-10">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Desde hace más de 30 años, <span className="font-bold text-foreground">POLYPACK</span> ha sido sinónimo de 
                   calidad y confiabilidad en la fabricación de bolsas plásticas industriales en Venezuela. 
@@ -140,7 +148,7 @@ const Index = () => {
                 "Resistencia al desgarro",
                 "Sellado hermético"
               ]}
-              imagen={productosImage}
+              imagen={product1Image}
             />
             <TarjetaProducto
               titulo="Bolsas Lineales"
@@ -152,6 +160,7 @@ const Index = () => {
                 "Ideal para congelados",
                 "Menor espesor, igual resistencia"
               ]}
+              imagen={product2Image}
             />
             <TarjetaProducto
               titulo="Soluciones Multicapa"
@@ -163,6 +172,7 @@ const Index = () => {
                 "Aplicaciones alimentarias",
                 "Máxima durabilidad"
               ]}
+              imagen={product3Image}
             />
           </div>
         </div>
@@ -237,10 +247,31 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Nuestros Clientes
+              Nuestra Planta en Acción
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Empresas líderes confían en nuestra calidad y experiencia
+              Instalaciones de vanguardia donde la calidad cobra vida
+            </p>
+          </div>
+          
+          <div className="mb-16">
+            <div className="glass-surface rounded-lg overflow-hidden hover:scale-[1.02] transition-all duration-300">
+              <img 
+                src={galleryImage} 
+                alt="Vista de nuestras instalaciones de producción POLYPACK"
+                className="w-full h-[400px] object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Empresas que Confían en Nosotros
+            </h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Más de tres décadas respaldando a la industria nacional
             </p>
           </div>
           

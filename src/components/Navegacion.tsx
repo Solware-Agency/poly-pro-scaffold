@@ -78,17 +78,20 @@ const Navegacion = () => {
           </a>
 
           <div className="hidden md:flex items-center space-x-8">
-            {enlaces.map((enlace) => (
-              <a
-                key={enlace.nombre}
-                href={enlace.href}
-                className={`font-medium transition-all duration-500 story-link ${textClasses} ${
-                  isActive(enlace.href) ? 'story-link-active' : ''
-                }`}
-              >
-                {enlace.nombre}
-              </a>
-            ))}
+            {enlaces.map((enlace) => {
+              const active = isActive(enlace.href);
+              return (
+                <a
+                  key={enlace.nombre}
+                  href={enlace.href}
+                  className={`font-medium transition-all duration-500 story-link ${
+                    scrolled ? '' : 'story-link-light'
+                  } ${textClasses} ${active ? 'story-link-active' : ''}`}
+                >
+                  {enlace.nombre}
+                </a>
+              );
+            })}
             <LanguageSelector scrolled={scrolled} />
           </div>
 

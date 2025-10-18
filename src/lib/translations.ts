@@ -190,7 +190,7 @@ export const translations: Record<Language, Translations> = {
       title: 'Conectemos!',
       subtitle: 'Estamos aquí para ayudarte',
       info: {
-        title: 'Información de Contacto',
+        title: 'Tengamos una reunión',
         location: 'Ubicación',
         phone: 'Teléfono',
         schedule: 'Horario de Atención',
@@ -292,7 +292,7 @@ export const translations: Record<Language, Translations> = {
       title: 'Let\'s Connect!',
       subtitle: 'We are here to help you',
       info: {
-        title: 'Contact Information',
+        title: 'Let\'s have a meeting',
         location: 'Location',
         phone: 'Phone',
         schedule: 'Business Hours',

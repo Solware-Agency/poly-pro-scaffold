@@ -7,9 +7,9 @@ interface TarjetaProductoProps {
   imagen?: string;
 }
 
-const CARD_CLASSES = "glass-surface rounded-lg overflow-hidden hover:scale-[1.02] transition-[transform,box-shadow,backdrop-filter] duration-500 ease-out hover:shadow-xl will-change-transform";
-const IMAGE_CONTAINER_CLASSES = "h-48 bg-muted overflow-hidden";
-const IMAGE_CLASSES = "w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105";
+const CARD_CLASSES = "glass-surface rounded-lg overflow-hidden hover:scale-[1.02] transition-[transform,box-shadow,backdrop-filter] duration-500 ease-out hover:shadow-xl will-change-transform w-full max-w-full";
+const IMAGE_CONTAINER_CLASSES = "h-48 bg-muted overflow-hidden w-full";
+const IMAGE_CLASSES = "w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105 max-w-full";
 
 const TarjetaProducto = ({ titulo, descripcion, especificaciones, imagen }: TarjetaProductoProps) => {
   const { t } = useLanguage();

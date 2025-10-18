@@ -10,6 +10,13 @@
 */
 
 @layer base {
+  html,
+  body {
+    @apply overflow-x-hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
   :root {
     /* Paleta base industrial */
     --background: 0 0% 98%;
@@ -125,13 +132,30 @@
 }
 
 @layer base {
-  * {
+  *,
+  *::before,
+  *::after {
     @apply border-border;
+    box-sizing: border-box;
   }
   
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   
   html {
@@ -163,6 +187,8 @@
                 border-color 500ms ease-in-out,
                 box-shadow 500ms ease-in-out;
     will-change: background, backdrop-filter, border-color, box-shadow;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   @media (prefers-reduced-transparency: reduce) {
@@ -191,6 +217,8 @@
     background: hsl(var(--neuo-bg));
     box-shadow: var(--neuo-shadow-light), var(--neuo-shadow-dark);
     border-radius: var(--radius);
+    max-width: 100%;
+    overflow: hidden;
   }
   
   .neuo-pressable {

@@ -46,7 +46,7 @@ const SeccionContacto = () => {
   };
   
   return (
-    <section id="contacto" className="py-20 bg-muted/30">
+    <section id="contacto" className="py-20 bg-muted/30 w-full overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
@@ -59,8 +59,8 @@ const SeccionContacto = () => {
         
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Información de contacto */}
-          <div className="space-y-6">
-            <div className="glass-surface p-6 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1">
+          <div className="space-y-6 w-full max-w-full">
+            <div className="glass-surface p-6 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
               <h3 className="text-2xl font-bold mb-6 text-foreground fade-in-title">
                 {t.contact.info.title}
               </h3>
@@ -125,7 +125,7 @@ const SeccionContacto = () => {
               </div>
             </div>
             
-            <div className="neuo-card p-6 transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1">
+            <div className="neuo-card p-6 transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
               <h4 className="font-bold text-lg mb-2 text-foreground">{t.contact.info.schedule}</h4>
               <p className="text-muted-foreground">{t.contact.scheduleWeekdays}</p>
               <p className="text-muted-foreground">{t.contact.scheduleSaturday}</p>
@@ -133,7 +133,7 @@ const SeccionContacto = () => {
           </div>
           
           {/* Formulario */}
-          <div className="glass-surface p-6 md:p-8 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.01] hover:shadow-xl">
+          <div className="glass-surface p-6 md:p-8 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.01] hover:shadow-xl w-full max-w-full">
             <h3 className="text-2xl font-bold mb-6 text-foreground fade-in-title">
               {t.contact.send}
             </h3>

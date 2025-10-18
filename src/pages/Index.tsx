@@ -23,7 +23,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden w-full">
       <Navegacion />
       <BotonWhatsApp />
 
@@ -36,7 +36,7 @@ const Index = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover max-w-full"
           poster={heroImage}
         >
           <source src="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Video_polypack.mp4" type="video/mp4" />
@@ -44,7 +44,7 @@ const Index = () => {
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
 
-        <div className="relative z-10 container mx-auto px-6 pb-16 md:pb-20">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 pb-16 md:pb-20">
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 fade-in-title drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               {t.hero.title}
@@ -64,7 +64,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="nosotros" className="py-20 bg-background">
+      <section id="nosotros" className="py-20 bg-background w-full overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
@@ -150,7 +150,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-muted/30">
+      <section className="py-12 bg-muted/30 w-full overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-surface rounded-lg overflow-hidden hover-smooth">
@@ -171,7 +171,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="productos" className="py-20 bg-background">
+      <section id="productos" className="py-20 bg-background w-full overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">

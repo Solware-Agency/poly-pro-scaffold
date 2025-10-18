@@ -22,7 +22,7 @@ const Index = () => {
       <BotonWhatsApp />
       
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
+      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Video de fondo */}
         <div className="absolute inset-0 z-0">
           <video

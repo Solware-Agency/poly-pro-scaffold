@@ -33,8 +33,8 @@ const Navegacion = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-header transition-all duration-500 ease-in-out ${
-        scrolled ? 'glass-surface' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-header ${
+        scrolled ? 'glass-surface' : 'glass-transparent'
       }`}
     >
       <div className="container mx-auto px-4">

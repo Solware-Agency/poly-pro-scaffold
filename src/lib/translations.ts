@@ -67,11 +67,36 @@ export interface Translations {
     subtitle: string;
     info: {
       title: string;
+      location: string;
+      phone: string;
+      schedule: string;
     };
     name: string;
     email: string;
     message: string;
     send: string;
+    scheduleWeekdays: string;
+    scheduleSaturday: string;
+  };
+  products: {
+    title: string;
+    subtitle: string;
+    specifications: string;
+    tubular: {
+      title: string;
+      description: string;
+      specs: string[];
+    };
+    industrial: {
+      title: string;
+      description: string;
+      specs: string[];
+    };
+    custom: {
+      title: string;
+      description: string;
+      specs: string[];
+    };
   };
   footer: {
     rights: string;
@@ -126,6 +151,7 @@ export const translations: Record<Language, Translations> = {
     products: {
       title: 'Nuestros Productos',
       subtitle: 'Soluciones a medida para cada industria',
+      specifications: 'Especificaciones:',
       tubular: {
         title: 'Película Tubular',
         description: 'Películas de polietileno de alta y baja densidad, ideal para empaques industriales y comerciales.',
@@ -162,11 +188,16 @@ export const translations: Record<Language, Translations> = {
       subtitle: 'Estamos aquí para ayudarte',
       info: {
         title: 'Información de Contacto',
+        location: 'Ubicación',
+        phone: 'Teléfono',
+        schedule: 'Horario de Atención',
       },
       name: 'Nombre',
       email: 'Correo Electrónico',
       message: 'Mensaje',
       send: 'Enviar Mensaje',
+      scheduleWeekdays: 'Lunes a Viernes: 8:00 AM - 5:00 PM',
+      scheduleSaturday: 'Sábados: 8:00 AM - 12:00 PM',
     },
     footer: {
       rights: 'Todos los derechos reservados.',
@@ -219,6 +250,7 @@ export const translations: Record<Language, Translations> = {
     products: {
       title: 'Our Products',
       subtitle: 'Customized solutions for every industry',
+      specifications: 'Specifications:',
       tubular: {
         title: 'Tubular Film',
         description: 'High and low density polyethylene films, ideal for industrial and commercial packaging.',
@@ -255,11 +287,16 @@ export const translations: Record<Language, Translations> = {
       subtitle: 'We are here to help you',
       info: {
         title: 'Contact Information',
+        location: 'Location',
+        phone: 'Phone',
+        schedule: 'Business Hours',
       },
       name: 'Name',
       email: 'Email',
       message: 'Message',
       send: 'Send Message',
+      scheduleWeekdays: 'Monday to Friday: 8:00 AM - 5:00 PM',
+      scheduleSaturday: 'Saturdays: 8:00 AM - 12:00 PM',
     },
     footer: {
       rights: 'All rights reserved.',

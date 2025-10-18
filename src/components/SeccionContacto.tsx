@@ -12,11 +12,7 @@ const CONTACT_INFO = {
   email: "administracion@plasticospolypack.com",
   instagram: "https://instagram.com/polypack",
   instagramHandle: "@polypack",
-  location: "Zona Industrial, Venezuela",
-  schedule: {
-    weekdays: "Lunes a Viernes: 8:00 AM - 5:00 PM",
-    saturday: "Sábados: 8:00 AM - 12:00 PM"
-  }
+  location: "Zona Industrial, Venezuela"
 };
 
 const SeccionContacto = () => {
@@ -75,7 +71,7 @@ const SeccionContacto = () => {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">Ubicación</p>
+                    <p className="font-semibold text-foreground">{t.contact.info.location}</p>
                     <p className="text-muted-foreground">{CONTACT_INFO.location}</p>
                   </div>
                 </div>
@@ -85,7 +81,7 @@ const SeccionContacto = () => {
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">Teléfono</p>
+                    <p className="font-semibold text-foreground">{t.contact.info.phone}</p>
                     <a
                       href={`tel:${CONTACT_INFO.phone}`}
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -130,9 +126,9 @@ const SeccionContacto = () => {
             </div>
             
             <div className="neuo-card p-6 transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1">
-              <h4 className="font-bold text-lg mb-2 text-foreground">Horario de Atención</h4>
-              <p className="text-muted-foreground">{CONTACT_INFO.schedule.weekdays}</p>
-              <p className="text-muted-foreground">{CONTACT_INFO.schedule.saturday}</p>
+              <h4 className="font-bold text-lg mb-2 text-foreground">{t.contact.info.schedule}</h4>
+              <p className="text-muted-foreground">{t.contact.scheduleWeekdays}</p>
+              <p className="text-muted-foreground">{t.contact.scheduleSaturday}</p>
             </div>
           </div>
           

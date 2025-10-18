@@ -1,3 +1,5 @@
+import { useLanguage } from "@/context/LanguageContext";
+
 interface TarjetaProductoProps {
   titulo: string;
   descripcion: string;
@@ -10,6 +12,7 @@ const IMAGE_CONTAINER_CLASSES = "h-48 bg-muted overflow-hidden";
 const IMAGE_CLASSES = "w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105";
 
 const TarjetaProducto = ({ titulo, descripcion, especificaciones, imagen }: TarjetaProductoProps) => {
+  const { t } = useLanguage();
   return (
     <div className={CARD_CLASSES}>
       {imagen && (
@@ -29,7 +32,7 @@ const TarjetaProducto = ({ titulo, descripcion, especificaciones, imagen }: Tarj
           {descripcion}
         </p>
         <div className="space-y-2">
-          <p className="text-sm font-semibold text-foreground">Especificaciones:</p>
+          <p className="text-sm font-semibold text-foreground">{t.products.specifications}</p>
           <ul className="space-y-1">
             {especificaciones.map((spec, idx) => (
               <li key={idx} className="text-sm text-muted-foreground flex items-start">

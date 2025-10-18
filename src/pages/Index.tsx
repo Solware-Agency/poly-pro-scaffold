@@ -48,10 +48,10 @@ const Index = () => {
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 pb-16 md:pb-20">
           <div className="max-w-2xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 fade-in-title drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 fade-in-title drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] leading-tight">
               {t.hero.title}
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-white/95 mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-relaxed">
               {t.hero.subtitle}
             </p>
             <Button
@@ -66,13 +66,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="nosotros" className="py-20 bg-background w-full overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section id="nosotros" className="py-12 sm:py-16 md:py-20 bg-background w-full overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline px-4">
               {t.about.title}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title px-4">
               {t.about.subtitle}
             </p>
           </div>
@@ -87,25 +87,25 @@ const Index = () => {
             </div>
 
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 {t.about.description}
               </p>
 
               <div className="space-y-4">
-                <div className="neuo-card p-6 transition-all duration-300 hover:scale-[1.02]">
-                  <h3 className="text-xl font-bold mb-2 text-foreground fade-in-title">
+                <div className="neuo-card p-4 sm:p-6 transition-all duration-300 hover:scale-[1.02]">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground fade-in-title">
                     {t.about.mission}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     {t.about.missionText}
                   </p>
                 </div>
 
-                <div className="neuo-card p-6 transition-all duration-300 hover:scale-[1.02]">
-                  <h3 className="text-xl font-bold mb-2 text-foreground fade-in-title">
+                <div className="neuo-card p-4 sm:p-6 transition-all duration-300 hover:scale-[1.02]">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground fade-in-title">
                     {t.about.vision}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     {t.about.visionText}
                   </p>
                 </div>
@@ -115,10 +115,10 @@ const Index = () => {
           </div>
 
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline px-4">
               {t.features.title}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title px-4">
               {t.features.subtitle}
             </p>
           </div>
@@ -152,7 +152,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-muted/30 w-full overflow-hidden">
+      <section className="py-8 sm:py-10 md:py-12 bg-muted/30 w-full overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-surface rounded-lg overflow-hidden hover-smooth">
@@ -173,13 +173,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="productos" className="py-20 bg-background w-full overflow-hidden">
+      <section id="productos" className="py-12 sm:py-16 md:py-20 bg-background w-full overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline px-4">
               {t.products.title}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title px-4">
               {t.products.subtitle}
             </p>
           </div>

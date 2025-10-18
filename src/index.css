@@ -172,10 +172,25 @@
     height: auto;
   }
 
-  h1, h2, h3, h4, h5, h6, p, span, a {
+  h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      line-height: 1.1;
+    }
+    h2 {
+      line-height: 1.15;
+    }
+  }
+
+  p, span, a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   html {

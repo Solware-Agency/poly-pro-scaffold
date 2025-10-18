@@ -46,13 +46,13 @@ const SeccionContacto = () => {
   };
   
   return (
-    <section id="contacto" className="py-20 bg-muted/30 w-full overflow-hidden">
+    <section id="contacto" className="py-12 sm:py-16 md:py-20 bg-muted/30 w-full overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline px-4">
             {t.contact.title}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title px-4">
             {t.contact.subtitle}
           </p>
         </div>
@@ -60,63 +60,63 @@ const SeccionContacto = () => {
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Información de contacto */}
           <div className="space-y-6 w-full max-w-full">
-            <div className="glass-surface p-6 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
-              <h3 className="text-2xl font-bold mb-6 text-foreground fade-in-title">
+            <div className="glass-surface p-4 sm:p-6 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground fade-in-title">
                 {t.contact.info.title}
               </h3>
               
               <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <MapPin className="w-5 h-5 text-primary" />
+                <div className="flex items-start space-x-3">
+                  <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-foreground">{t.contact.info.location}</p>
-                    <p className="text-muted-foreground">{CONTACT_INFO.location}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">{t.contact.info.location}</p>
+                    <p className="text-muted-foreground text-sm break-words">{CONTACT_INFO.location}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Phone className="w-5 h-5 text-primary" />
+                <div className="flex items-start space-x-3">
+                  <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-foreground">{t.contact.info.phone}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">{t.contact.info.phone}</p>
                     <a
                       href={`tel:${CONTACT_INFO.phone}`}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm break-all"
                     >
                       +58 412-9395171
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Mail className="w-5 h-5 text-primary" />
+                <div className="flex items-start space-x-3">
+                  <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Email</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">Email</p>
                     <a
                       href={`mailto:${CONTACT_INFO.email}`}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors text-xs sm:text-sm break-all"
                     >
                       {CONTACT_INFO.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Instagram className="w-5 h-5 text-primary" />
+                <div className="flex items-start space-x-3">
+                  <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                    <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Instagram</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">Instagram</p>
                     <a
                       href={CONTACT_INFO.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary-glow story-link"
+                      className="text-primary hover:text-primary-glow story-link text-sm break-all"
                     >
                       {CONTACT_INFO.instagramHandle}
                     </a>
@@ -125,16 +125,16 @@ const SeccionContacto = () => {
               </div>
             </div>
             
-            <div className="neuo-card p-6 transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
-              <h4 className="font-bold text-lg mb-2 text-foreground">{t.contact.info.schedule}</h4>
-              <p className="text-muted-foreground">{t.contact.scheduleWeekdays}</p>
-              <p className="text-muted-foreground">{t.contact.scheduleSaturday}</p>
+            <div className="neuo-card p-4 sm:p-6 transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
+              <h4 className="font-bold text-base sm:text-lg mb-2 text-foreground">{t.contact.info.schedule}</h4>
+              <p className="text-muted-foreground text-sm sm:text-base">{t.contact.scheduleWeekdays}</p>
+              <p className="text-muted-foreground text-sm sm:text-base">{t.contact.scheduleSaturday}</p>
             </div>
           </div>
           
           {/* Formulario */}
-          <div className="glass-surface p-6 md:p-8 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.01] hover:shadow-xl w-full max-w-full">
-            <h3 className="text-2xl font-bold mb-6 text-foreground fade-in-title">
+          <div className="glass-surface p-4 sm:p-6 md:p-8 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.01] hover:shadow-xl w-full max-w-full">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground fade-in-title">
               {t.contact.send}
             </h3>
 

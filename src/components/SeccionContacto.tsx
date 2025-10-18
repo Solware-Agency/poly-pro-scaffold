@@ -84,7 +84,12 @@ const SeccionContacto = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Email</p>
-                    <p className="text-muted-foreground">contacto@polypack.com.ve</p>
+                    <a
+                      href="mailto:administracion@plasticospolypack.com"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      administracion@plasticospolypack.com
+                    </a>
                   </div>
                 </div>
                 

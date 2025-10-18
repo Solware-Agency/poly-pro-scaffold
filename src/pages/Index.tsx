@@ -46,10 +46,10 @@ const Index = () => {
         {/* Contenido Hero */}
         <div className="relative z-10 container mx-auto px-4 h-screen flex items-end">
           <div className="pb-12 md:pb-16 lg:pb-20 space-y-4 md:space-y-6 animate-fade-up max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-2xl">
+            <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-white leading-tight drop-shadow-2xl">
               {t.hero.title}
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-2xl drop-shadow-lg">
+            <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-2xl drop-shadow-lg">
               {t.hero.subtitle}
             </p>
           </div>

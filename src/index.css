@@ -266,6 +266,23 @@
     }
   }
 
+  /* Subrayado verde para títulos */
+  .title-underline {
+    @apply relative inline-block pb-3;
+  }
+
+  .title-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: hsl(var(--primary));
+    border-radius: 2px;
+  }
+
   /* Hover suave global */
   .hover-smooth {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),

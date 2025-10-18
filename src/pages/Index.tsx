@@ -7,9 +7,9 @@ import BotonWhatsApp from "@/components/BotonWhatsApp";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
 import heroImage from "@/assets/factory-hero.webp";
-import aboutImage from "@/assets/factory-nosotros.webp";
+import aboutImage from "@/assets/factory-gallery.webp";
 import extrusionImage from "@/assets/factory-extrusion.webp";
-import galleryImage from "@/assets/factory-gallery.webp";
+import galleryImage from "@/assets/factory-nosotros.webp";
 import product1 from "@/assets/product-1.webp";
 import product2 from "@/assets/product-2.webp";
 import product3 from "@/assets/product-3.webp";
@@ -67,7 +67,7 @@ const Index = () => {
       <section id="nosotros" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
               {t.about.title}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -121,7 +121,7 @@ const Index = () => {
           </div>
 
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
               {t.features.title}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -182,7 +182,7 @@ const Index = () => {
       <section id="productos" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline">
               {t.products.title}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

@@ -12,7 +12,7 @@ const CONTACT_INFO = {
   email: "administracion@plasticospolypack.com",
   instagram: "https://instagram.com/polypack",
   instagramHandle: "@polypack",
-  location: "Zona Industrial, Venezuela"
+  location: "calle la pedrera edif eneva piso sotano 1 local sotano 1 urb industrial guaicay las minas de baruta miranda"
 };
 
 const SeccionContacto = () => {

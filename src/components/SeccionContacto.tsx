@@ -38,7 +38,7 @@ const SeccionContacto = () => {
     <section id="contacto" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground fade-in-title">
             {t.contact.title}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -49,7 +49,7 @@ const SeccionContacto = () => {
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Información de contacto */}
           <div className="space-y-6">
-            <div className="glass-surface p-6 rounded-lg">
+            <div className="glass-surface p-6 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1">
               <h3 className="text-2xl font-bold mb-6 text-foreground">
                 {t.contact.info.title}
               </h3>
@@ -114,7 +114,7 @@ const SeccionContacto = () => {
               </div>
             </div>
             
-            <div className="neuo-card p-6">
+            <div className="neuo-card p-6 transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1">
               <h4 className="font-bold text-lg mb-2 text-foreground">Horario de Atención</h4>
               <p className="text-muted-foreground">Lunes a Viernes: 8:00 AM - 5:00 PM</p>
               <p className="text-muted-foreground">Sábados: 8:00 AM - 12:00 PM</p>
@@ -122,7 +122,7 @@ const SeccionContacto = () => {
           </div>
           
           {/* Formulario */}
-          <div className="glass-surface p-6 md:p-8 rounded-lg">
+          <div className="glass-surface p-6 md:p-8 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.01] hover:shadow-xl">
             <h3 className="text-2xl font-bold mb-6 text-foreground">
               {t.contact.send}
             </h3>

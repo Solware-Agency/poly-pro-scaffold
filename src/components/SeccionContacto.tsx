@@ -41,7 +41,7 @@ const SeccionContacto = () => {
       return;
     }
 
-    toast.success("Mensaje enviado. Nos pondremos en contacto pronto.");
+    toast.success(t.contact.send);
     resetForm();
   };
   
@@ -148,7 +148,7 @@ const SeccionContacto = () => {
                   type="text"
                   value={formData.nombre}
                   onChange={(e) => handleInputChange("nombre", e.target.value)}
-                  placeholder={t.contact.name}
+                  placeholder={t.contact.namePlaceholder}
                   className="w-full"
                 />
               </div>
@@ -162,7 +162,7 @@ const SeccionContacto = () => {
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
-                  placeholder={t.contact.email}
+                  placeholder={t.contact.emailPlaceholder}
                   className="w-full"
                 />
               </div>
@@ -175,7 +175,7 @@ const SeccionContacto = () => {
                   id="mensaje"
                   value={formData.mensaje}
                   onChange={(e) => handleInputChange("mensaje", e.target.value)}
-                  placeholder={t.contact.message}
+                  placeholder={t.contact.messagePlaceholder}
                   rows={5}
                   className="w-full resize-none"
                 />

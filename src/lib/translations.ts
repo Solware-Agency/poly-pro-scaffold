@@ -74,6 +74,9 @@ export interface Translations {
     name: string;
     email: string;
     message: string;
+    namePlaceholder: string;
+    emailPlaceholder: string;
+    messagePlaceholder: string;
     send: string;
     scheduleWeekdays: string;
     scheduleSaturday: string;
@@ -184,7 +187,7 @@ export const translations: Record<Language, Translations> = {
       },
     },
     contact: {
-      title: 'Contáctanos',
+      title: 'Conectemos!',
       subtitle: 'Estamos aquí para ayudarte',
       info: {
         title: 'Información de Contacto',
@@ -195,7 +198,10 @@ export const translations: Record<Language, Translations> = {
       name: 'Nombre',
       email: 'Correo Electrónico',
       message: 'Mensaje',
-      send: 'Enviar Mensaje',
+      namePlaceholder: 'John Doe',
+      emailPlaceholder: 'johndoe@gmail.com',
+      messagePlaceholder: 'Déjanos tu comentario',
+      send: 'Te contactaremos pronto',
       scheduleWeekdays: 'Lunes a Viernes: 8:00 AM - 5:00 PM',
       scheduleSaturday: 'Sábados: 8:00 AM - 12:00 PM',
     },
@@ -283,7 +289,7 @@ export const translations: Record<Language, Translations> = {
       },
     },
     contact: {
-      title: 'Contact Us',
+      title: 'Let\'s Connect!',
       subtitle: 'We are here to help you',
       info: {
         title: 'Contact Information',
@@ -294,7 +300,10 @@ export const translations: Record<Language, Translations> = {
       name: 'Name',
       email: 'Email',
       message: 'Message',
-      send: 'Send Message',
+      namePlaceholder: 'John Doe',
+      emailPlaceholder: 'johndoe@gmail.com',
+      messagePlaceholder: 'Leave us your comment',
+      send: 'We\'ll contact you soon',
       scheduleWeekdays: 'Monday to Friday: 8:00 AM - 5:00 PM',
       scheduleSaturday: 'Saturdays: 8:00 AM - 12:00 PM',
     },

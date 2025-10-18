@@ -1,29 +1,48 @@
 import { useLanguage } from '@/context/LanguageContext';
-import { Button } from '@/components/ui/button';
-import { Globe } from 'lucide-react';
 
-export const LanguageSelector = () => {
+interface LanguageSelectorProps {
+  scrolled?: boolean;
+  isMobile?: boolean;
+}
+
+export const LanguageSelector = ({ scrolled = false, isMobile = false }: LanguageSelectorProps) => {
   const { language, setLanguage } = useLanguage();
 
+  const linkClasses = isMobile
+    ? `font-medium py-2 px-4 rounded-lg transition-colors ${
+        scrolled
+          ? 'text-foreground hover:text-primary hover:bg-muted'
+          : 'text-white hover:text-white/80 hover:bg-white/10'
+      }`
+    : `font-medium transition-all duration-500 story-link ${
+        scrolled
+          ? 'text-foreground hover:text-primary'
+          : 'text-white hover:text-white/80 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
+      }`;
+
+  const activeClasses = isMobile
+    ? ''
+    : 'underline underline-offset-4';
+
+  const containerClasses = isMobile
+    ? 'flex gap-4'
+    : 'flex items-center gap-4';
+
   return (
-    <div className="flex items-center gap-2">
-      <Globe className="h-4 w-4 text-white/90" />
-      <Button
-        variant={language === 'es' ? 'default' : 'ghost'}
-        size="sm"
+    <div className={containerClasses}>
+      <button
         onClick={() => setLanguage('es')}
-        className={`h-8 px-3 ${language !== 'es' ? 'text-white hover:text-white/80' : ''}`}
+        className={`${linkClasses} ${language === 'es' ? activeClasses : ''}`}
       >
         ES
-      </Button>
-      <Button
-        variant={language === 'en' ? 'default' : 'ghost'}
-        size="sm"
+      </button>
+      <span className={scrolled ? 'text-foreground/30' : 'text-white/30'}>|</span>
+      <button
         onClick={() => setLanguage('en')}
-        className={`h-8 px-3 ${language !== 'en' ? 'text-white hover:text-white/80' : ''}`}
+        className={`${linkClasses} ${language === 'en' ? activeClasses : ''}`}
       >
         EN
-      </Button>
+      </button>
     </div>
   );
 };

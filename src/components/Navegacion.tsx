@@ -80,11 +80,7 @@ const Navegacion = () => {
                 {enlace.nombre}
               </a>
             ))}
-            <div className={`transition-all duration-500 ${
-              scrolled ? '' : 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]'
-            }`}>
-              <LanguageSelector />
-            </div>
+            <LanguageSelector scrolled={scrolled} />
           </div>
 
           <button
@@ -109,8 +105,8 @@ const Navegacion = () => {
                   {enlace.nombre}
                 </a>
               ))}
-              <div className="py-2 px-4">
-                <LanguageSelector />
+              <div className="px-4 pt-2">
+                <LanguageSelector scrolled={scrolled} isMobile={true} />
               </div>
             </div>
           </div>

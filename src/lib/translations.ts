@@ -115,7 +115,7 @@ export const translations: Record<Language, Translations> = {
     hero: {
       title: 'Soluciones Innovadoras en Plásticos',
       subtitle: 'Más de 30 años fabricando empaques plásticos de alta calidad para la industria venezolana',
-      cta: 'Solicitar Cotización',
+      cta: 'Conectemos!',
     },
     about: {
       title: 'Sobre POLYPACK',
@@ -214,7 +214,7 @@ export const translations: Record<Language, Translations> = {
     hero: {
       title: 'Innovative Plastic Solutions',
       subtitle: 'Over 30 years manufacturing high-quality plastic packaging for Venezuelan industry',
-      cta: 'Request Quote',
+      cta: 'Let\'s Connect!',
     },
     about: {
       title: 'About POLYPACK',

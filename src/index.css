@@ -17,6 +17,26 @@
     max-width: 100vw;
   }
 
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    body {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   :root {
     /* Paleta base industrial */
     --background: 0 0% 98%;

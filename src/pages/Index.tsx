@@ -17,9 +17,11 @@ import product3 from "@/assets/product-3.webp";
 const Index = () => {
   const { t } = useLanguage();
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contacto');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  const openWhatsApp = () => {
+    const mensaje = encodeURIComponent("Hola, me gustaría solicitar información sobre sus productos.");
+    const numero = import.meta.env.VITE_WHATSAPP_NUMBER || "+584129395171";
+    const urlWhatsApp = `https://wa.me/${numero}?text=${mensaje}`;
+    window.open(urlWhatsApp, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -55,7 +57,7 @@ const Index = () => {
             <Button
               variant="hero"
               size="lg"
-              onClick={scrollToContact}
+              onClick={openWhatsApp}
               className="text-sm md:text-base px-6 py-5 drop-shadow-2xl"
             >
               {t.hero.cta}

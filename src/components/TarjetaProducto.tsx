@@ -7,13 +7,13 @@ interface TarjetaProductoProps {
 
 const TarjetaProducto = ({ titulo, descripcion, especificaciones, imagen }: TarjetaProductoProps) => {
   return (
-    <div className="glass-surface rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-xl">
+    <div className="glass-surface rounded-lg overflow-hidden hover:scale-[1.02] transition-[transform,box-shadow,backdrop-filter] duration-500 ease-out hover:shadow-xl will-change-transform">
       {imagen && (
         <div className="h-48 bg-muted overflow-hidden">
-          <img 
-            src={imagen} 
+          <img
+            src={imagen}
             alt={titulo}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105"
           />
         </div>
       )}

@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logoPolypack from "@/assets/logo-polypack.webp";
 
 const Navegacion = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -20,13 +21,12 @@ const Navegacion = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="text-primary-foreground font-bold text-xl md:text-2xl">P</span>
-            </div>
-            <span className="text-xl md:text-2xl font-bold text-foreground">
-              POLYPACK
-            </span>
+          <a href="#inicio" className="flex items-center group">
+            <img 
+              src={logoPolypack} 
+              alt="Logo POLYPACK" 
+              className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform"
+            />
           </a>
           
           {/* Enlaces desktop */}

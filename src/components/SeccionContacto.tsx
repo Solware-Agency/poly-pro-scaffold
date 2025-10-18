@@ -69,7 +69,12 @@ const SeccionContacto = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Teléfono</p>
-                    <p className="text-muted-foreground">+58 (424) 123-4567</p>
+                    <a 
+                      href="tel:+584129395171" 
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      +58 412-9395171
+                    </a>
                   </div>
                 </div>
                 

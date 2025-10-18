@@ -9,7 +9,7 @@ const BotonWhatsApp = () => {
   const [mostrarPulso, setMostrarPulso] = useState(true);
   
   // Configuración WhatsApp
-  const numero = "+584241234567"; // Variable de entorno: NEXT_PUBLIC_WHATSAPP_NUMERO
+  const numero = "+584129395171"; // Variable de entorno: NEXT_PUBLIC_WHATSAPP_NUMERO
   const mensaje = encodeURIComponent("Hola, me gustaría solicitar información sobre sus productos.");
   const urlWhatsApp = `https://wa.me/${numero}?text=${mensaje}`;
   
@@ -26,9 +26,9 @@ const BotonWhatsApp = () => {
       rel="noopener noreferrer"
       aria-label="Abrir chat de WhatsApp"
       className={`
-        fixed bottom-4 right-4 md:bottom-6 md:right-6
+        fixed bottom-20 right-4 sm:bottom-6 sm:right-6
         z-whatsapp
-        w-14 h-14 md:w-16 md:h-16
+        w-14 h-14 sm:w-16 sm:h-16
         bg-[#25D366] hover:bg-[#20BA5A]
         rounded-full
         flex items-center justify-center

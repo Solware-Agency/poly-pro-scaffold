@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-polypack.jpg";
 import extrusionImage from "@/assets/extrusion-process.jpg";
 import productosImage from "@/assets/productos-bolsas.jpg";
+import logoPolypack from "@/assets/logo-polypack.webp";
 
 const Index = () => {
   return (
@@ -16,7 +17,7 @@ const Index = () => {
       <BotonWhatsApp />
       
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
         {/* Imagen de fondo con overlay */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -30,11 +31,11 @@ const Index = () => {
         {/* Contenido Hero */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-6 animate-fade-up">
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight px-2">
               Bolsas Plásticas Industriales con{" "}
               <span className="text-primary-glow">Precisión y Confianza</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-2xl mx-auto px-4">
               Más de 30 años de experiencia en extrusión de alta calidad. 
               Procesos hasta 12 capas, baja densidad (0.40) y lineales.
             </p>
@@ -270,11 +271,12 @@ const Index = () => {
       <footer className="bg-secondary text-secondary-foreground py-8">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">P</span>
-              </div>
-              <span className="text-2xl font-bold">POLYPACK</span>
+            <div className="flex items-center justify-center mb-4">
+              <img 
+                src={logoPolypack} 
+                alt="Logo POLYPACK" 
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-secondary-foreground/80 mb-2">
               Más de 30 años fabricando calidad en Venezuela

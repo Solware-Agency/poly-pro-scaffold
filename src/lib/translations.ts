@@ -103,7 +103,8 @@ export interface Translations {
   };
   footer: {
     rights: string;
-    developed: string;
+    rif: string;
+    developedBy: string;
   };
 }
 
@@ -207,7 +208,8 @@ export const translations: Record<Language, Translations> = {
     },
     footer: {
       rights: 'Todos los derechos reservados.',
-      developed: 'Desarrollado con',
+      rif: 'RIF: J-502691910',
+      developedBy: 'Desarrollado por',
     },
   },
   en: {
@@ -309,7 +311,8 @@ export const translations: Record<Language, Translations> = {
     },
     footer: {
       rights: 'All rights reserved.',
-      developed: 'Developed with',
+      rif: 'RIF: J-502691910',
+      developedBy: 'Developed by',
     },
   },
 };

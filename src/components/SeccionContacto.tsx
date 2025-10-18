@@ -4,8 +4,10 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const SeccionContacto = () => {
+  const { t } = useLanguage();
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [mensaje, setMensaje] = useState("");
@@ -37,10 +39,10 @@ const SeccionContacto = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Contáctanos
+            {t.contact.title}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Estamos listos para ayudarte con tus necesidades de empaque industrial
+            {t.contact.subtitle}
           </p>
         </div>
         
@@ -49,7 +51,7 @@ const SeccionContacto = () => {
           <div className="space-y-6">
             <div className="glass-surface p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-6 text-foreground">
-                Información de Contacto
+                {t.contact.info.title}
               </h3>
               
               <div className="space-y-4">
@@ -122,58 +124,58 @@ const SeccionContacto = () => {
           {/* Formulario */}
           <div className="glass-surface p-6 md:p-8 rounded-lg">
             <h3 className="text-2xl font-bold mb-6 text-foreground">
-              Envíanos un Mensaje
+              {t.contact.send}
             </h3>
-            
+
             <form onSubmit={manejarEnvio} className="space-y-4">
               <div>
                 <label htmlFor="nombre" className="block text-sm font-medium mb-2 text-foreground">
-                  Nombre completo
+                  {t.contact.name}
                 </label>
                 <Input
                   id="nombre"
                   type="text"
                   value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
-                  placeholder="Tu nombre"
+                  placeholder={t.contact.name}
                   className="w-full"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
-                  Correo electrónico
+                  {t.contact.email}
                 </label>
                 <Input
                   id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="tu@email.com"
+                  placeholder={t.contact.email}
                   className="w-full"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="mensaje" className="block text-sm font-medium mb-2 text-foreground">
-                  Mensaje
+                  {t.contact.message}
                 </label>
                 <Textarea
                   id="mensaje"
                   value={mensaje}
                   onChange={(e) => setMensaje(e.target.value)}
-                  placeholder="¿Cómo podemos ayudarte?"
+                  placeholder={t.contact.message}
                   rows={5}
                   className="w-full resize-none"
                 />
               </div>
-              
-              <Button 
-                type="submit" 
+
+              <Button
+                type="submit"
                 variant="hero"
                 className="w-full py-6 text-lg"
               >
-                Enviar Mensaje
+                {t.contact.send}
               </Button>
             </form>
           </div>

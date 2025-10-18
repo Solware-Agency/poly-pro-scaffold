@@ -1,34 +1,35 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logoPolypack from "@/assets/logo-polypack-new.webp";
+import { useLanguage } from "@/context/LanguageContext";
+import { LanguageSelector } from "./LanguageSelector";
 
 const Navegacion = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
-  
+  const { t } = useLanguage();
+
   const enlaces = [
-    { nombre: "Inicio", href: "#inicio" },
-    { nombre: "Nosotros", href: "#nosotros" },
-    { nombre: "Productos", href: "#productos" },
-    { nombre: "Tecnología", href: "#tecnologia" },
-    { nombre: "Clientes", href: "#clientes" },
-    { nombre: "Contacto", href: "#contacto" },
+    { nombre: t.nav.home, href: "#inicio" },
+    { nombre: t.nav.about, href: "#nosotros" },
+    { nombre: t.nav.products, href: "#productos" },
+    { nombre: t.nav.contact, href: "#contacto" },
   ];
-  
+
   const cerrarMenu = () => setMenuAbierto(false);
-  
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-header glass-surface">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#inicio" className="flex items-center group">
-            <img 
-              src={logoPolypack} 
-              alt="Logo POLYPACK" 
+            <img
+              src={logoPolypack}
+              alt="Logo POLYPACK"
               className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform"
             />
           </a>
-          
+
           {/* Enlaces desktop */}
           <div className="hidden md:flex items-center space-x-8">
             {enlaces.map((enlace) => (
@@ -40,8 +41,9 @@ const Navegacion = () => {
                 {enlace.nombre}
               </a>
             ))}
+            <LanguageSelector />
           </div>
-          
+
           {/* Botón menú móvil */}
           <button
             onClick={() => setMenuAbierto(!menuAbierto)}
@@ -70,6 +72,9 @@ const Navegacion = () => {
                   {enlace.nombre}
                 </a>
               ))}
+              <div className="py-2 px-4">
+                <LanguageSelector />
+              </div>
             </div>
           </div>
         )}

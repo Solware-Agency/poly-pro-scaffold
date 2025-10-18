@@ -5,6 +5,7 @@ import TarjetaCaracteristica from "@/components/TarjetaCaracteristica";
 import TarjetaProducto from "@/components/TarjetaProducto";
 import SeccionContacto from "@/components/SeccionContacto";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/context/LanguageContext";
 import heroImage from "@/assets/factory-hero.webp";
 import extrusionImage from "@/assets/factory-extrusion.webp";
 import nosotrosImage from "@/assets/factory-nosotros.webp";
@@ -15,6 +16,7 @@ import galleryImage from "@/assets/factory-gallery.webp";
 import logoPolypack from "@/assets/logo-polypack-new.webp";
 
 const Index = () => {
+  const { t } = useLanguage();
   return (
     <div className="min-h-screen bg-background">
       <Navegacion />
@@ -36,12 +38,10 @@ const Index = () => {
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-6 animate-fade-up">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight px-2">
-              Bolsas Plásticas Industriales con{" "}
-              <span className="text-primary-glow">Precisión y Confianza</span>
+              {t.hero.title}
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-2xl mx-auto px-4">
-              Más de 30 años de experiencia en extrusión de alta calidad. 
-              Procesos hasta 12 capas, baja densidad (0.40) y lineales.
+              {t.hero.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button 
@@ -51,17 +51,17 @@ const Index = () => {
                 asChild
               >
                 <a href="#productos">
-                  Ver Productos
+                  {t.products.cta}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="glass"
                 className="text-lg px-8 py-6"
                 asChild
               >
-                <a href="#contacto">Contactar</a>
+                <a href="#contacto">{t.hero.cta}</a>
               </Button>
             </div>
           </div>
@@ -74,30 +74,30 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Nuestra Historia
+                {t.about.title}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Tres décadas liderando la industria venezolana de empaques plásticos
+                {t.about.subtitle}
               </p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <TarjetaCaracteristica
                 icono={Factory}
-                titulo="Extrusión de hasta 12 capas"
-                descripcion="Tecnología de punta para procesos multicapa que garantizan resistencia y durabilidad excepcionales."
+                titulo={t.features.feature1.title}
+                descripcion={t.features.feature1.description}
                 variante="glass"
               />
               <TarjetaCaracteristica
                 icono={ShieldCheck}
-                titulo="Materia prima certificada"
-                descripcion="Importamos material activo de petroleras estadounidenses con trazabilidad completa y certificación de calidad."
+                titulo={t.features.feature2.title}
+                descripcion={t.features.feature2.description}
                 variante="neuo"
               />
               <TarjetaCaracteristica
                 icono={Recycle}
-                titulo="Producción sectorizada"
-                descripcion="Procesos optimizados por sectores para máxima eficiencia y control de calidad en cada etapa."
+                titulo={t.features.feature3.title}
+                descripcion={t.features.feature3.description}
                 variante="glass"
               />
             </div>
@@ -109,15 +109,13 @@ const Index = () => {
               />
               <div className="prose prose-lg max-w-none relative z-10">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Desde hace más de 30 años, <span className="font-bold text-foreground">POLYPACK</span> ha sido sinónimo de 
-                  calidad y confiabilidad en la fabricación de bolsas plásticas industriales en Venezuela. 
-                  Nuestra experiencia nos ha permitido desarrollar procesos de extrusión de vanguardia, 
-                  capaces de producir hasta 12 capas de material.
+                  {t.about.text1}
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  {t.about.text2}
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Trabajamos exclusivamente con materia prima importada de las principales petroleras de Estados Unidos, 
-                  garantizando trazabilidad y calidad en cada producto. Nuestros procesos de baja densidad (0.40) y 
-                  lineales están diseñados para satisfacer las demandas más exigentes de la industria.
+                  {t.about.text3}
                 </p>
               </div>
             </div>
@@ -130,17 +128,17 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Nuestros Productos
+              {t.products.title}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Soluciones de empaque industrial adaptadas a sus necesidades específicas
+              {t.products.subtitle}
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <TarjetaProducto
-              titulo="Bolsas Baja Densidad"
-              descripcion="Bolsas de polietileno de baja densidad, ideales para productos que requieren flexibilidad y resistencia."
+              titulo={t.products.item1.title}
+              descripcion={t.products.item1.description}
               especificaciones={[
                 "Densidad: 0.40",
                 "Grosor personalizable",
@@ -151,8 +149,8 @@ const Index = () => {
               imagen={product1Image}
             />
             <TarjetaProducto
-              titulo="Bolsas Lineales"
-              descripcion="Polietileno lineal de baja densidad para aplicaciones industriales de alto rendimiento."
+              titulo={t.products.item2.title}
+              descripcion={t.products.item2.description}
               especificaciones={[
                 "Mayor resistencia al impacto",
                 "Transparencia superior",
@@ -163,8 +161,8 @@ const Index = () => {
               imagen={product2Image}
             />
             <TarjetaProducto
-              titulo="Soluciones Multicapa"
-              descripcion="Estructuras complejas de hasta 12 capas para requisitos especializados."
+              titulo={t.products.item3.title}
+              descripcion={t.products.item3.description}
               especificaciones={[
                 "Barreras personalizadas",
                 "Protección UV opcional",
@@ -247,10 +245,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Nuestra Planta en Acción
+              {t.gallery.title}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Instalaciones de vanguardia donde la calidad cobra vida
+              {t.features.title}
             </p>
           </div>
           
@@ -310,10 +308,10 @@ const Index = () => {
               />
             </div>
             <p className="text-secondary-foreground/80 mb-2">
-              Más de 30 años fabricando calidad en Venezuela
+              {t.about.subtitle}
             </p>
             <p className="text-sm text-secondary-foreground/60">
-              © 2025 POLYPACK. Todos los derechos reservados.
+              © 2025 POLYPACK. {t.footer.rights}
             </p>
           </div>
         </div>

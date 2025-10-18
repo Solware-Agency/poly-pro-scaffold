@@ -29,30 +29,39 @@ const Index = () => {
 
       <section
         id="inicio"
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative h-screen flex items-end overflow-hidden"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster={heroImage}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-        </div>
+          <source src="/video-hero.mp4" type="video/mp4" />
+          <source src="/video-hero.webm" type="video/webm" />
+        </video>
 
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 fade-in-title drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-            {t.hero.title}
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-white/95 mb-8 max-w-3xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-            {t.hero.subtitle}
-          </p>
-          <Button
-            variant="hero"
-            size="lg"
-            onClick={scrollToContact}
-            className="text-base md:text-lg px-8 py-6 drop-shadow-2xl"
-          >
-            {t.hero.cta}
-          </Button>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+
+        <div className="relative z-10 container mx-auto px-6 pb-16 md:pb-20">
+          <div className="max-w-2xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 fade-in-title drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+              {t.hero.title}
+            </h1>
+            <p className="text-base md:text-lg lg:text-xl text-white/95 mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              {t.hero.subtitle}
+            </p>
+            <Button
+              variant="hero"
+              size="lg"
+              onClick={scrollToContact}
+              className="text-sm md:text-base px-6 py-5 drop-shadow-2xl"
+            >
+              {t.hero.cta}
+            </Button>
+          </div>
         </div>
       </section>
 

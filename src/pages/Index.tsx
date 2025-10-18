@@ -22,7 +22,7 @@ const Index = () => {
       <BotonWhatsApp />
       
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="inicio" className="relative min-h-screen overflow-hidden">
         {/* Video de fondo */}
         <div className="absolute inset-0 z-0">
           <video
@@ -44,12 +44,12 @@ const Index = () => {
         </div>
 
         {/* Contenido Hero */}
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto space-y-6 animate-fade-up">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight px-2 drop-shadow-2xl">
+        <div className="relative z-10 container mx-auto px-4 h-screen flex items-end">
+          <div className="pb-12 md:pb-16 lg:pb-20 space-y-4 md:space-y-6 animate-fade-up max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-2xl">
               {t.hero.title}
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-2xl mx-auto px-4 drop-shadow-lg">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-2xl drop-shadow-lg">
               {t.hero.subtitle}
             </p>
           </div>

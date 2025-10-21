@@ -124,11 +124,11 @@ export const translations: Record<Language, Translations> = {
     about: {
       title: 'Sobre POLYPACK',
       subtitle: 'Líderes en fabricación de empaques plásticos',
-      description: 'POLYPACK es una empresa venezolana con más de 30 años de experiencia en la distribución de empaques plásticos de alta calidad. Nos especializamos en películas tubulares de polietileno para diversos sectores industriales.',
+      description: 'Empresa familiar venezolana con más de 30 años fabricando empaques y bolsas plásticas de calidad, con procesos controlados y mejora constante.',
       mission: 'Nuestra Misión',
-      missionText: 'Fabricar empaques y bolsas plásticas de excelente calidad que superen las expectativas de nuestros clientes, utilizando tecnología de punta y procesos sostenibles.',
+      missionText: 'Fabricar empaques plásticos resistentes y confiables, adaptados a las necesidades de cada cliente. Nuestra misión es optimizar los procesos productivos, mantener el control de calidad y aprovechar cada mejora tecnológica para reducir costos y desperdicios.',
       vision: 'Nuestra Visión',
-      visionText: 'Ser la empresa líder en soluciones de empaque plástico en Venezuela y expandir nuestra presencia en el mercado latinoamericano.',
+      visionText: 'Consolidarnos como una empresa venezolana de referencia. Nuestra visión es seguir invirtiendo en el país, renovando la maquinaria para reducir desperdicios y aumentar la eficiencia de producción.',
       values: 'Nuestros Valores',
       valuesText: 'Calidad, compromiso, innovación y responsabilidad ambiental guían cada uno de nuestros procesos productivos.',
     },
@@ -137,19 +137,19 @@ export const translations: Record<Language, Translations> = {
       subtitle: 'Experiencia, calidad y compromiso',
       quality: {
         title: 'Calidad Garantizada',
-        description: 'Productos fabricados bajo estrictos estándares de calidad, con materias primas certificadas y controles rigurosos en cada etapa.',
+        description: 'Fabricamos con materia prima premium y reciclada de nuestra planta, controlando cada etapa para garantizar calidad, resistencia y uniformidad.',
       },
       experience: {
         title: '+30 Años de Experiencia',
-        description: 'Tres décadas perfeccionando nuestros procesos y satisfaciendo las necesidades de clientes en diversos sectores industriales.',
+        description: 'Más de tres décadas de trabajo familiar, perfeccionando procesos y fortaleciendo la confianza de nuestros clientes en todo el país.',
       },
       technology: {
         title: 'Tecnología Avanzada',
-        description: 'Maquinaria de extrusión de última generación que garantiza productos uniformes y de alta resistencia.',
+        description: 'Contamos con equipos modernos en sellado y extrusión que optimizan la precisión, reducen desperdicios y mejoran la eficiencia productiva.',
       },
       sustainability: {
         title: 'Compromiso Ambiental',
-        description: 'Procesos productivos responsables con el medio ambiente, utilizando materiales reciclables y reduciendo desperdicios.',
+        description: 'Reutilizamos el 100% de nuestros propios residuos, evitando químicos y reduciendo el impacto ambiental de nuestra producción.',
       },
     },
     products: {
@@ -158,7 +158,7 @@ export const translations: Record<Language, Translations> = {
       specifications: 'Especificaciones:',
       tubular: {
         title: 'Película Tubular',
-        description: 'Películas de polietileno de alta y baja densidad, ideal para empaques industriales y comerciales.',
+        description: 'Películas tubulares fabricadas a medida, con espesores y anchos ajustados según la necesidad de cada cliente.',
         specs: [
           'Calibres desde 2 hasta 8 milésimas',
           'Anchos de 10 cm hasta 150 cm',
@@ -168,7 +168,7 @@ export const translations: Record<Language, Translations> = {
       },
       industrial: {
         title: 'Bolsas Industriales',
-        description: 'Bolsas de alta resistencia para sectores agrícola, alimenticio, químico y construcción.',
+        description: 'Bolsas fabricadas con mezclas técnicas según el uso, garantizando sellado firme, resistencia y excelente presentación.',
         specs: [
           'Diversas capacidades y tamaños',
           'Con o sin impresión personalizada',
@@ -178,7 +178,7 @@ export const translations: Record<Language, Translations> = {
       },
       custom: {
         title: 'Distribución Nacional',
-        description: 'Distribuimos directamente a comercios a nivel nacional, garantizando productos de calidad y entregas oportunas.',
+        description: 'Entregamos a nivel nacional con tiempos confiables y atención directa para cada cliente.',
         specs: [
           'Distribución directa a comercios',
           'Cobertura a nivel nacional',
@@ -227,11 +227,11 @@ export const translations: Record<Language, Translations> = {
     about: {
       title: 'About POLYPACK',
       subtitle: 'Leaders in plastic packaging manufacturing',
-      description: 'POLYPACK is a Venezuelan company with over 30 years of experience in distributing high-quality plastic packaging. We specialize in polyethylene tubular films for various industrial sectors.',
+      description: 'Venezuelan family business with over 30 years manufacturing quality plastic packaging and bags, with controlled processes and continuous improvement.',
       mission: 'Our Mission',
-      missionText: 'To manufacture excellent quality plastic packaging and bags that exceed our customers\' expectations, using cutting-edge technology and sustainable processes.',
+      missionText: 'To manufacture resistant and reliable plastic packaging, adapted to each client\'s needs. Our mission is to optimize production processes, maintain quality control, and leverage every technological improvement to reduce costs and waste.',
       vision: 'Our Vision',
-      visionText: 'To be the leading company in plastic packaging solutions in Venezuela and expand our presence in the Latin American market.',
+      visionText: 'To consolidate ourselves as a leading Venezuelan company. Our vision is to continue investing in the country, renewing machinery to reduce waste and increase production efficiency.',
       values: 'Our Values',
       valuesText: 'Quality, commitment, innovation and environmental responsibility guide each of our production processes.',
     },
@@ -240,19 +240,19 @@ export const translations: Record<Language, Translations> = {
       subtitle: 'Experience, quality and commitment',
       quality: {
         title: 'Guaranteed Quality',
-        description: 'Products manufactured under strict quality standards, with certified raw materials and rigorous controls at every stage.',
+        description: 'We manufacture with premium and recycled raw materials from our plant, controlling every stage to guarantee quality, strength, and uniformity.',
       },
       experience: {
         title: '+30 Years of Experience',
-        description: 'Three decades perfecting our processes and meeting the needs of customers in various industrial sectors.',
+        description: 'Over three decades of family work, perfecting processes and strengthening the trust of our clients throughout the country.',
       },
       technology: {
         title: 'Advanced Technology',
-        description: 'State-of-the-art extrusion machinery that guarantees uniform and highly resistant products.',
+        description: 'We have modern sealing and extrusion equipment that optimizes precision, reduces waste, and improves production efficiency.',
       },
       sustainability: {
         title: 'Environmental Commitment',
-        description: 'Environmentally responsible production processes, using recyclable materials and reducing waste.',
+        description: 'We reuse 100% of our own waste, avoiding chemicals and reducing the environmental impact of our production.',
       },
     },
     products: {
@@ -261,7 +261,7 @@ export const translations: Record<Language, Translations> = {
       specifications: 'Specifications:',
       tubular: {
         title: 'Tubular Film',
-        description: 'High and low density polyethylene films, ideal for industrial and commercial packaging.',
+        description: 'Tubular films manufactured to measure, with thicknesses and widths adjusted according to each client\'s needs.',
         specs: [
           'Gauges from 2 to 8 thousandths',
           'Widths from 10 cm to 150 cm',
@@ -271,7 +271,7 @@ export const translations: Record<Language, Translations> = {
       },
       industrial: {
         title: 'Industrial Bags',
-        description: 'High-strength bags for agricultural, food, chemical and construction sectors.',
+        description: 'Bags manufactured with technical blends according to use, guaranteeing firm sealing, strength, and excellent presentation.',
         specs: [
           'Various capacities and sizes',
           'With or without custom printing',
@@ -281,7 +281,7 @@ export const translations: Record<Language, Translations> = {
       },
       custom: {
         title: 'National Distribution',
-        description: 'We distribute directly to businesses nationwide, ensuring quality products and timely deliveries.',
+        description: 'We deliver nationwide with reliable timelines and direct attention for each client.',
         specs: [
           'Direct distribution to businesses',
           'Nationwide coverage',

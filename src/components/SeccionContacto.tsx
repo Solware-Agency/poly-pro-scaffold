@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { validateContactForm, type ContactFormData } from "@/lib/validations";
+import { trackContactFormSubmit } from "@/lib/analytics";
 
 const CONTACT_INFO = {
   phone: "+584129395171",
@@ -38,10 +39,12 @@ const SeccionContacto = () => {
 
     if (!validation.isValid) {
       toast.error(validation.error);
+      trackContactFormSubmit(false);
       return;
     }
 
     toast.success(t.contact.send);
+    trackContactFormSubmit(true);
     resetForm();
   };
   

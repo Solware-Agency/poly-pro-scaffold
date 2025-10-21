@@ -6,6 +6,7 @@ import SeccionContacto from "@/components/SeccionContacto";
 import BotonWhatsApp from "@/components/BotonWhatsApp";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackWhatsAppClick } from "@/lib/analytics";
 import heroImage from "@/assets/factory-hero.webp";
 import aboutImage from "@/assets/factory-gallery.webp";
 import extrusionImage from "@/assets/factory-extrusion.webp";
@@ -18,6 +19,7 @@ const Index = () => {
   const { t } = useLanguage();
 
   const openWhatsApp = () => {
+    trackWhatsAppClick();
     const mensaje = encodeURIComponent("Hola, me gustaría solicitar información sobre sus productos.");
     const numero = import.meta.env.VITE_WHATSAPP_NUMBER || "+584129395171";
     const urlWhatsApp = `https://wa.me/${numero}?text=${mensaje}`;

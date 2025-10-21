@@ -4,9 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Sistema de diseño POLYPACK - Todo en español
-   Estética dual: Liquid Glass + Neumorphism
-   Colores industriales con acento verde reciclaje
+/*
+  Sistema de Diseño POLYPACK
+  Estética dual: Liquid Glass + Neumorphism
+  Colores industriales con acento verde reciclaje
 */
 
 @layer base {
@@ -38,16 +39,16 @@
   }
 
   :root {
-    /* Paleta base industrial */
+    /* --- Paleta de Colores Base Industrial --- */
     --background: 0 0% 98%;
     --foreground: 0 0% 10%;
     
-    /* Verde reciclaje POLYPACK - Color principal */
+    /* --- Verde Reciclaje POLYPACK (Color Principal) --- */
     --primary: 140 48% 45%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 140 48% 55%;
     
-    /* Grises industriales */
+    /* --- Grises Industriales --- */
     --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 98%;
     
@@ -57,50 +58,50 @@
     --accent: 140 48% 45%;
     --accent-foreground: 0 0% 100%;
     
-    /* Superficies */
+    /* --- Colores de Superficies --- */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 10%;
     
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
     
-    /* Destructive */
+    /* --- Colores Destructivos --- */
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Bordes e inputs */
+    /* --- Bordes e Inputs --- */
     --border: 0 0% 88%;
     --input: 0 0% 88%;
     --ring: 140 48% 45%;
     
-    /* Radius */
+    /* --- Radio de Bordes --- */
     --radius: 12px;
     
-    /* Liquid Glass tokens */
+    /* --- Tokens de Liquid Glass --- */
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(255, 255, 255, 0.2);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     
-    /* Neumorphism tokens */
+    /* --- Tokens de Neumorphism --- */
     --neuo-bg: 0 0% 96%;
     --neuo-shadow-light: -8px -8px 16px rgba(255, 255, 255, 0.8);
     --neuo-shadow-dark: 8px 8px 16px rgba(0, 0, 0, 0.1);
     --neuo-shadow-inset-light: inset -4px -4px 8px rgba(255, 255, 255, 0.5);
     --neuo-shadow-inset-dark: inset 4px 4px 8px rgba(0, 0, 0, 0.05);
     
-    /* Gradientes */
+    /* --- Gradientes --- */
     --gradient-primary: linear-gradient(135deg, hsl(140 48% 45%), hsl(140 48% 55%));
     --gradient-subtle: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
     --gradient-dark: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 20%));
     
-    /* Sombras elevadas */
+    /* --- Sombras Elevadas --- */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
     --shadow-glow: 0 0 40px hsl(140 48% 55% / 0.3);
     
-    /* Sistema de z-index nombrado */
+    /* --- Sistema de Z-Index --- */
     --z-base: 0;
     --z-header: 100;
     --z-modal: 200;
@@ -108,7 +109,7 @@
     --z-whatsapp: 400;
     --z-tooltip: 500;
     
-    /* Transiciones suaves */
+    /* --- Transiciones Suaves --- */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
@@ -210,7 +211,7 @@
 }
 
 @layer utilities {
-  /* Liquid Glass utilities */
+  /* --- Utilidades de Liquid Glass --- */
   .glass-surface {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -246,8 +247,7 @@
                 box-shadow 500ms ease-in-out;
     will-change: background, backdrop-filter, border-color, box-shadow;
   }
-  
-  /* Neumorphism utilities */
+  /* --- Utilidades de Neumorphism --- */
   .neuo-card {
     background: hsl(var(--neuo-bg));
     box-shadow: var(--neuo-shadow-light), var(--neuo-shadow-dark);
@@ -269,16 +269,14 @@
   .neuo-pressable:active {
     box-shadow: var(--neuo-shadow-inset-light), var(--neuo-shadow-inset-dark);
   }
-  
-  /* Z-index nombrado */
+  /* --- Clases de Z-Index --- */
   .z-base { z-index: var(--z-base); }
   .z-header { z-index: var(--z-header); }
   .z-modal { z-index: var(--z-modal); }
   .z-toast { z-index: var(--z-toast); }
   .z-whatsapp { z-index: var(--z-whatsapp); }
   .z-tooltip { z-index: var(--z-tooltip); }
-  
-  /* Gradientes */
+  /* --- Clases de Gradientes --- */
   .gradient-primary {
     background: var(--gradient-primary);
   }
@@ -286,8 +284,7 @@
   .gradient-subtle {
     background: var(--gradient-subtle);
   }
-  
-  /* Animación de enlace con subrayado */
+  /* --- Animación de Enlaces con Subrayado --- */
   .story-link {
     @apply relative inline-block pb-1;
   }
@@ -311,14 +308,14 @@
     transform-origin: bottom left;
   }
 
-  /* Estado activo del enlace - mantiene el subrayado visible */
+  /* Estado activo del enlace */
   .story-link-active::after {
     transform: scaleX(1) !important;
     transform-origin: bottom left !important;
     background-color: hsl(var(--primary));
   }
 
-  /* Subrayado blanco para navbar transparente */
+  /* Subrayado para navbar transparente */
   .story-link-light::after {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
@@ -329,17 +326,15 @@
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
   }
 
-  /* Estado activo en mobile - destacado con fondo */
+  /* Estado activo en dispositivos móviles */
   .mobile-link-active {
     @apply bg-primary/10 text-primary border-l-4 border-primary;
   }
-  
-  /* Hover scale suave */
+  /* --- Efectos de Hover --- */
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-105;
   }
-  
-  /* Pulse sutil continuo */
+  /* Animación de pulso sutil */
   .pulse-subtle {
     animation: pulse-continuous 2.5s ease-in-out infinite;
   }
@@ -355,7 +350,7 @@
     }
   }
 
-  /* Fade in para títulos */
+  /* --- Animaciones de Entrada --- */
   .fade-in-title {
     animation: fade-in-up 0.8s ease-out both;
   }
@@ -371,7 +366,7 @@
     }
   }
 
-  /* Subrayado verde para títulos */
+  /* Subrayado decorativo para títulos */
   .title-underline {
     @apply relative inline-block pb-3;
   }
@@ -388,7 +383,7 @@
     border-radius: 2px;
   }
 
-  /* Hover suave global */
+  /* Efecto hover suave global */
   .hover-smooth {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                 box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
@@ -399,7 +394,7 @@
     transform: translateY(-4px);
   }
 
-  /* Text justification utility */
+  /* --- Utilidades de Texto --- */
   .text-justified {
     text-align: justify;
     text-justify: inter-word;

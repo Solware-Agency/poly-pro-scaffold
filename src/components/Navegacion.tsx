@@ -4,35 +4,36 @@ import logoPolypack from "@/assets/logo-polypack-new.webp";
 import { useLanguage } from "@/context/LanguageContext";
 import { LanguageSelector } from "./LanguageSelector";
 import { useActiveSection } from "@/hooks/useActiveSection";
+import { SCROLL_CONFIG } from "@/config/constants";
 
-const SCROLL_THRESHOLD = 50;
+const NAV_SECTIONS = ["inicio", "nosotros", "productos", "contacto"] as const;
 
 const Navegacion = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
-  const activeSection = useActiveSection(["inicio", "nosotros", "productos", "contacto"]);
+  const activeSection = useActiveSection(NAV_SECTIONS);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > SCROLL_THRESHOLD);
+      setScrolled(window.scrollY > SCROLL_CONFIG.threshold);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const enlaces = [
-    { nombre: t.nav.home, href: "#inicio" },
-    { nombre: t.nav.about, href: "#nosotros" },
-    { nombre: t.nav.products, href: "#productos" },
-    { nombre: t.nav.contact, href: "#contacto" },
+  const navLinks = [
+    { label: t.nav.home, href: "#inicio" },
+    { label: t.nav.about, href: "#nosotros" },
+    { label: t.nav.products, href: "#productos" },
+    { label: t.nav.contact, href: "#contacto" },
   ];
 
-  const toggleMenu = () => setMenuAbierto(!menuAbierto);
-  const cerrarMenu = () => setMenuAbierto(false);
+  const toggleMenu = () => setMenuAbierto(prev => !prev);
+  const closeMenu = () => setMenuAbierto(false);
 
-  const isActive = (href: string) => {
+  const isActiveLink = (href: string): boolean => {
     const sectionId = href.replace('#', '');
     return activeSection === sectionId;
   };
@@ -78,17 +79,17 @@ const Navegacion = () => {
           </a>
 
           <div className="hidden md:flex items-center space-x-8">
-            {enlaces.map((enlace) => {
-              const active = isActive(enlace.href);
+            {navLinks.map((link) => {
+              const isActive = isActiveLink(link.href);
               return (
                 <a
-                  key={enlace.nombre}
-                  href={enlace.href}
+                  key={link.label}
+                  href={link.href}
                   className={`font-medium transition-all duration-500 story-link ${
                     scrolled ? '' : 'story-link-light'
-                  } ${textClasses} ${active ? 'story-link-active' : ''}`}
+                  } ${textClasses} ${isActive ? 'story-link-active' : ''}`}
                 >
-                  {enlace.nombre}
+                  {link.label}
                 </a>
               );
             })}
@@ -107,16 +108,16 @@ const Navegacion = () => {
         {menuAbierto && (
           <div className={mobileMenuClasses}>
             <div className="flex flex-col space-y-3">
-              {enlaces.map((enlace) => (
+              {navLinks.map((link) => (
                 <a
-                  key={enlace.nombre}
-                  href={enlace.href}
-                  onClick={cerrarMenu}
+                  key={link.label}
+                  href={link.href}
+                  onClick={closeMenu}
                   className={`${mobileLinkClasses} ${
-                    isActive(enlace.href) ? 'mobile-link-active' : ''
+                    isActiveLink(link.href) ? 'mobile-link-active' : ''
                   }`}
                 >
-                  {enlace.nombre}
+                  {link.label}
                 </a>
               ))}
               <div className="px-4 pt-2">

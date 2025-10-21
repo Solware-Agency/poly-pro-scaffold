@@ -1,11 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { trackWhatsAppClick } from "@/lib/analytics";
-
-const WHATSAPP_CONFIG = {
-  numero: import.meta.env.VITE_WHATSAPP_NUMBER || "+584129395171",
-  mensajeES: "Hola, me gustaría solicitar información sobre sus productos.",
-  mensajeEN: "Hello, I would like to request information about your products.",
-};
+import { WHATSAPP_CONFIG } from "@/config/constants";
 
 const BUTTON_CLASSES = `
   fixed bottom-20 right-4 sm:bottom-6 sm:right-6
@@ -35,8 +30,8 @@ const TOOLTIP_CLASSES = `
 `;
 
 const BotonWhatsApp = () => {
-  const mensaje = encodeURIComponent(WHATSAPP_CONFIG.mensajeES);
-  const urlWhatsApp = `https://wa.me/${WHATSAPP_CONFIG.numero}?text=${mensaje}`;
+  const message = encodeURIComponent(WHATSAPP_CONFIG.defaultMessage.es);
+  const whatsappUrl = `https://wa.me/${WHATSAPP_CONFIG.number}?text=${message}`;
 
   const handleClick = () => {
     trackWhatsAppClick();
@@ -44,7 +39,7 @@ const BotonWhatsApp = () => {
 
   return (
     <a
-      href={urlWhatsApp}
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Abrir chat de WhatsApp"
@@ -52,12 +47,11 @@ const BotonWhatsApp = () => {
       title="Contactar por WhatsApp"
       onClick={handleClick}
     >
-      <MessageCircle 
-        className="w-7 h-7 md:w-8 md:h-8 text-white group-hover:rotate-12 transition-transform duration-300" 
+      <MessageCircle
+        className="w-7 h-7 md:w-8 md:h-8 text-white group-hover:rotate-12 transition-transform duration-300"
         strokeWidth={2}
       />
-      
-      {/* Tooltip accesible */}
+
       <span className={TOOLTIP_CLASSES}>
         Contáctanos por WhatsApp
       </span>

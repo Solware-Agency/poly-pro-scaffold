@@ -7,6 +7,7 @@ import BotonWhatsApp from "@/components/BotonWhatsApp";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
 import { trackWhatsAppClick } from "@/lib/analytics";
+import { WHATSAPP_CONFIG } from "@/config/constants";
 import heroImage from "@/assets/factory-hero.webp";
 import aboutImage from "@/assets/factory-gallery.webp";
 import extrusionImage from "@/assets/factory-extrusion.webp";
@@ -15,15 +16,16 @@ import product1 from "@/assets/product-1.webp";
 import product2 from "@/assets/product-2.webp";
 import product3 from "@/assets/product-3.webp";
 
+const VIDEO_SOURCE = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Video_polypack.mp4";
+
 const Index = () => {
   const { t } = useLanguage();
 
   const openWhatsApp = () => {
     trackWhatsAppClick();
-    const mensaje = encodeURIComponent("Hola, me gustaría solicitar información sobre sus productos.");
-    const numero = import.meta.env.VITE_WHATSAPP_NUMBER || "+584129395171";
-    const urlWhatsApp = `https://wa.me/${numero}?text=${mensaje}`;
-    window.open(urlWhatsApp, '_blank', 'noopener,noreferrer');
+    const message = encodeURIComponent(WHATSAPP_CONFIG.defaultMessage.es);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_CONFIG.number}?text=${message}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -43,7 +45,7 @@ const Index = () => {
           className="absolute inset-0 w-full h-full object-cover max-w-full"
           poster={heroImage}
         >
-          <source src="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Video_polypack.mp4" type="video/mp4" />
+          <source src={VIDEO_SOURCE} type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />

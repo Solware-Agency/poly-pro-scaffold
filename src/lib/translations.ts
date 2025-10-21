@@ -119,11 +119,11 @@ export const translations: Record<Language, Translations> = {
     hero: {
       title: 'Soluciones Innovadoras en Plásticos',
       subtitle: 'Más de 30 años fabricando empaques plásticos de alta calidad para la industria venezolana',
-      cta: 'Conectemos!',
+      cta: '¡Conectemos!',
     },
     about: {
       title: 'Sobre POLYPACK',
-      subtitle: 'Líderes en fabricación de empaques plásticos',
+      subtitle: 'Líderes en la fabricación de empaques plásticos',
       description: 'Empresa familiar venezolana con más de 30 años fabricando empaques y bolsas plásticas de calidad, con procesos controlados y mejora constante.',
       mission: 'Nuestra Misión',
       missionText: 'Fabricar empaques plásticos resistentes y confiables, adaptados a las necesidades de cada cliente. Nuestra misión es optimizar los procesos productivos, mantener el control de calidad y aprovechar cada mejora tecnológica para reducir costos y desperdicios.',
@@ -140,7 +140,7 @@ export const translations: Record<Language, Translations> = {
         description: 'Fabricamos con materia prima premium y reciclada de nuestra planta, controlando cada etapa para garantizar calidad, resistencia y uniformidad.',
       },
       experience: {
-        title: '+30 Años de Experiencia',
+        title: 'Más de 30 Años de Experiencia',
         description: 'Más de tres décadas de trabajo familiar, perfeccionando procesos y fortaleciendo la confianza de nuestros clientes en todo el país.',
       },
       technology: {
@@ -188,10 +188,10 @@ export const translations: Record<Language, Translations> = {
       },
     },
     contact: {
-      title: 'Conectemos!',
+      title: '¡Conectemos!',
       subtitle: 'Estamos aquí para ayudarte',
       info: {
-        title: 'Tengamos una reunión',
+        title: 'Información de Contacto',
         location: 'Ubicación',
         phone: 'Teléfono',
         schedule: 'Horario de Atención',
@@ -201,7 +201,7 @@ export const translations: Record<Language, Translations> = {
       message: 'Mensaje',
       namePlaceholder: 'John Doe',
       emailPlaceholder: 'johndoe@gmail.com',
-      messagePlaceholder: 'Déjanos tu comentario',
+      messagePlaceholder: 'Escribe tu mensaje aquí',
       send: 'Te contactaremos pronto',
       scheduleWeekdays: 'Lunes a Viernes: 8:00 AM - 5:00 PM',
       scheduleSaturday: 'Sábados: 8:00 AM - 12:00 PM',
@@ -243,7 +243,7 @@ export const translations: Record<Language, Translations> = {
         description: 'We manufacture with premium and recycled raw materials from our plant, controlling every stage to guarantee quality, strength, and uniformity.',
       },
       experience: {
-        title: '+30 Years of Experience',
+        title: 'Over 30 Years of Experience',
         description: 'Over three decades of family work, perfecting processes and strengthening the trust of our clients throughout the country.',
       },
       technology: {
@@ -294,7 +294,7 @@ export const translations: Record<Language, Translations> = {
       title: 'Let\'s Connect!',
       subtitle: 'We are here to help you',
       info: {
-        title: 'Let\'s have a meeting',
+        title: 'Contact Information',
         location: 'Location',
         phone: 'Phone',
         schedule: 'Business Hours',
@@ -304,8 +304,8 @@ export const translations: Record<Language, Translations> = {
       message: 'Message',
       namePlaceholder: 'John Doe',
       emailPlaceholder: 'johndoe@gmail.com',
-      messagePlaceholder: 'Leave us your comment',
-      send: 'We\'ll contact you soon',
+      messagePlaceholder: 'Write your message here',
+      send: 'We Will Contact You Soon',
       scheduleWeekdays: 'Monday to Friday: 8:00 AM - 5:00 PM',
       scheduleSaturday: 'Saturdays: 8:00 AM - 12:00 PM',
     },

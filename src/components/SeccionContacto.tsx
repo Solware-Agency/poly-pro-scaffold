@@ -7,14 +7,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { validateContactForm, type ContactFormData } from "@/lib/validations";
 import { trackContactFormSubmit } from "@/lib/analytics";
-
-const CONTACT_INFO = {
-  phone: "+584129395171",
-  email: "administracion@plasticospolypack.com",
-  instagram: "https://instagram.com/polypack",
-  instagramHandle: "@polypack",
-  location: "calle la pedrera edif eneva piso sotano 1 local sotano 1 urb industrial guaicay las minas de baruta miranda"
-};
+import { CONTACT_CONFIG } from "@/config/constants";
 
 const SeccionContacto = () => {
   const { t } = useLanguage();
@@ -32,7 +25,7 @@ const SeccionContacto = () => {
     setFormData({ nombre: "", email: "", mensaje: "" });
   };
 
-  const manejarEnvio = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const validation = validateContactForm(formData);
@@ -61,7 +54,6 @@ const SeccionContacto = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Información de contacto */}
           <div className="space-y-6 w-full max-w-full">
             <div className="glass-surface p-4 sm:p-6 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground fade-in-title">
@@ -75,7 +67,7 @@ const SeccionContacto = () => {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-foreground text-sm sm:text-base">{t.contact.info.location}</p>
-                    <p className="text-muted-foreground text-sm break-words">{CONTACT_INFO.location}</p>
+                    <p className="text-muted-foreground text-sm break-words">{CONTACT_CONFIG.location}</p>
                   </div>
                 </div>
 
@@ -86,7 +78,7 @@ const SeccionContacto = () => {
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-foreground text-sm sm:text-base">{t.contact.info.phone}</p>
                     <a
-                      href={`tel:${CONTACT_INFO.phone}`}
+                      href={`tel:${CONTACT_CONFIG.phone}`}
                       className="text-muted-foreground hover:text-primary transition-colors text-sm break-all"
                     >
                       +58 412-9395171
@@ -101,10 +93,10 @@ const SeccionContacto = () => {
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-foreground text-sm sm:text-base">Email</p>
                     <a
-                      href={`mailto:${CONTACT_INFO.email}`}
+                      href={`mailto:${CONTACT_CONFIG.email}`}
                       className="text-muted-foreground hover:text-primary transition-colors text-xs sm:text-sm break-all"
                     >
-                      {CONTACT_INFO.email}
+                      {CONTACT_CONFIG.email}
                     </a>
                   </div>
                 </div>
@@ -116,12 +108,12 @@ const SeccionContacto = () => {
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-foreground text-sm sm:text-base">Instagram</p>
                     <a
-                      href={CONTACT_INFO.instagram}
+                      href={CONTACT_CONFIG.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary-glow story-link text-sm break-all"
                     >
-                      {CONTACT_INFO.instagramHandle}
+                      {CONTACT_CONFIG.instagramHandle}
                     </a>
                   </div>
                 </div>
@@ -134,14 +126,12 @@ const SeccionContacto = () => {
               <p className="text-muted-foreground text-sm sm:text-base">{t.contact.scheduleSaturday}</p>
             </div>
           </div>
-          
-          {/* Formulario */}
           <div className="glass-surface p-4 sm:p-6 md:p-8 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.01] hover:shadow-xl w-full max-w-full">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground fade-in-title">
               {t.contact.send}
             </h3>
 
-            <form onSubmit={manejarEnvio} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="nombre" className="block text-sm font-medium mb-2 text-foreground">
                   {t.contact.name}

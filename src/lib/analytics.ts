@@ -5,8 +5,15 @@ declare global {
       targetId: string,
       config?: Record<string, unknown>
     ) => void;
+    dataLayer?: Array<Record<string, unknown>>;
   }
 }
+
+export const pushToDataLayer = (data: Record<string, unknown>) => {
+  if (typeof window !== 'undefined' && window.dataLayer) {
+    window.dataLayer.push(data);
+  }
+};
 
 export const trackEvent = (
   eventName: string,
@@ -15,6 +22,11 @@ export const trackEvent = (
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, eventParams);
   }
+
+  pushToDataLayer({
+    event: eventName,
+    ...eventParams,
+  });
 };
 
 export const trackPageView = (path: string, title?: string) => {
@@ -24,6 +36,12 @@ export const trackPageView = (path: string, title?: string) => {
       page_title: title,
     });
   }
+
+  pushToDataLayer({
+    event: 'page_view',
+    page_path: path,
+    page_title: title,
+  });
 };
 
 export const trackWhatsAppClick = () => {

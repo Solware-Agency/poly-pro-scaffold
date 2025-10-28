@@ -4,8 +4,9 @@ import logoPolypack from "@/assets/logo-polypack-new.webp";
 import { useLanguage } from "@/context/LanguageContext";
 import { LanguageSelector } from "./LanguageSelector";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import { SCROLL_CONFIG, NAV_SECTIONS } from "@/config/constants";
-import { NAV_STYLES } from "@/config/styles";
+import { SCROLL_CONFIG } from "@/config/constants";
+
+const NAV_SECTIONS = ["inicio", "nosotros", "productos", "contacto"] as const;
 
 const Navegacion = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -37,12 +38,33 @@ const Navegacion = () => {
     return activeSection === sectionId;
   };
 
-  const navClasses = NAV_STYLES.getNavClasses(scrolled);
-  const textClasses = NAV_STYLES.getTextClasses(scrolled);
-  const logoClasses = NAV_STYLES.getLogoClasses(scrolled);
-  const buttonClasses = NAV_STYLES.getButtonClasses(scrolled);
-  const mobileMenuClasses = NAV_STYLES.getMobileMenuClasses(scrolled);
-  const mobileLinkClasses = NAV_STYLES.getMobileLinkClasses(scrolled);
+  const navClasses = `fixed top-0 left-0 right-0 z-header ${
+    scrolled ? 'glass-surface' : 'glass-transparent'
+  }`;
+
+  const textClasses = scrolled
+    ? 'text-foreground hover:text-primary'
+    : 'text-white hover:text-white/80 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]';
+
+  const logoClasses = `h-10 md:h-12 w-auto group-hover:scale-105 transition-all duration-500 ${
+    scrolled ? 'drop-shadow-none' : 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]'
+  }`;
+
+  const buttonClasses = `md:hidden p-2 rounded-lg transition-all duration-500 ${
+    scrolled
+      ? 'hover:bg-muted text-foreground'
+      : 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] hover:bg-white/10'
+  }`;
+
+  const mobileMenuClasses = `md:hidden pb-4 animate-fade-in ${
+    scrolled ? '' : 'bg-black/50 backdrop-blur-md rounded-lg'
+  }`;
+
+  const mobileLinkClasses = `font-medium py-2 px-4 rounded-lg transition-colors ${
+    scrolled
+      ? 'text-foreground hover:text-primary hover:bg-muted'
+      : 'text-white hover:text-white/80 hover:bg-white/10'
+  }`;
 
   return (
     <nav className={navClasses}>

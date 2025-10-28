@@ -1,16 +1,15 @@
 import { Mail, MapPin, Phone, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { validateContactForm } from "@/lib/validations";
+import { validateContactForm, type ContactFormData } from "@/lib/validations";
 import { trackContactFormSubmit } from "@/lib/analytics";
 import { CONTACT_CONFIG } from "@/config/constants";
-import type { ContactFormData } from "@/types";
 
-const ContactSection = () => {
+const SeccionContacto = () => {
   const { t } = useLanguage();
   const [formData, setFormData] = useState<ContactFormData>({
     nombre: "",
@@ -41,7 +40,7 @@ const ContactSection = () => {
     trackContactFormSubmit(true);
     resetForm();
   };
-
+  
   return (
     <section id="contacto" className="py-12 sm:py-16 md:py-20 bg-muted/30 w-full overflow-hidden">
       <div className="container mx-auto px-4">
@@ -53,14 +52,14 @@ const ContactSection = () => {
             {t.contact.subtitle}
           </p>
         </div>
-
+        
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className="space-y-6 w-full max-w-full">
             <div className="glass-surface p-4 sm:p-6 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground fade-in-title">
                 {t.contact.info.title}
               </h3>
-
+              
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -128,7 +127,7 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-
+            
             <div className="neuo-card p-4 sm:p-6 transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
               <h4 className="font-bold text-base sm:text-lg mb-2 text-foreground">{t.contact.info.schedule}</h4>
               <p className="text-muted-foreground text-sm sm:text-base">{t.contact.scheduleWeekdays}</p>
@@ -198,4 +197,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default SeccionContacto;

@@ -1,25 +1,239 @@
+import { ShieldCheck, Leaf, Factory, Award } from "lucide-react";
 import Navegacion from "@/components/Navegacion";
+import TarjetaCaracteristica from "@/components/TarjetaCaracteristica";
+import TarjetaProducto from "@/components/TarjetaProducto";
+import SeccionContacto from "@/components/SeccionContacto";
 import BotonWhatsApp from "@/components/BotonWhatsApp";
-import Footer from "@/components/Footer";
-import HeroSection from "@/features/hero/HeroSection";
-import AboutSection from "@/features/about/AboutSection";
-import FactoryGalleryPreview from "@/features/about/FactoryGalleryPreview";
-import ProductsSection from "@/features/products/ProductsSection";
-import GallerySection from "@/features/gallery/GallerySection";
-import ContactSection from "@/features/contact/ContactSection";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/context/LanguageContext";
+import { trackWhatsAppClick } from "@/lib/analytics";
+import { WHATSAPP_CONFIG } from "@/config/constants";
+import heroImage from "@/assets/factory-hero.webp";
+const aboutImage = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2014.webp";
+import extrusionImage from "@/assets/factory-extrusion.webp";
+const galleryImage = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2003.webp";
+const product1 = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2016.webp";
+const product2 = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2012.webp";
+const product3 = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2001%20.webp";
+
+const VIDEO_SOURCE = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Polypack%20Vid.%20Final%20(1)%20(1).mp4";
 
 const Index = () => {
+  const { t } = useLanguage();
+
+  const openWhatsApp = () => {
+    trackWhatsAppClick();
+    const message = encodeURIComponent(WHATSAPP_CONFIG.defaultMessage.es);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_CONFIG.number}?text=${message}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
       <Navegacion />
       <BotonWhatsApp />
-      <HeroSection />
-      <AboutSection />
-      <FactoryGalleryPreview />
-      <ProductsSection />
-      <GallerySection />
-      <ContactSection />
-      <Footer />
+
+      <section
+        id="inicio"
+        className="relative h-screen flex items-end overflow-hidden"
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover max-w-full"
+          poster={heroImage}
+        >
+          <source src={VIDEO_SOURCE} type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 pb-16 md:pb-20">
+          <div className="max-w-2xl">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 fade-in-title drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] leading-tight">
+              {t.hero.title}
+            </h1>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-relaxed">
+              {t.hero.subtitle}
+            </p>
+            <Button
+              variant="hero"
+              size="lg"
+              onClick={openWhatsApp}
+              className="text-sm md:text-base px-6 py-5 drop-shadow-2xl"
+            >
+              {t.hero.cta}
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="nosotros" className="py-12 sm:py-16 md:py-20 bg-background w-full overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline px-4">
+              {t.about.title}
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title px-4">
+              {t.about.subtitle}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div className="glass-surface rounded-lg overflow-hidden hover-smooth">
+              <img
+                src={aboutImage}
+                alt="Instalaciones POLYPACK"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="space-y-6">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed text-justified">
+                {t.about.description}
+              </p>
+
+              <div className="space-y-4">
+                <div className="neuo-card p-4 sm:p-6 transition-all duration-300 hover:scale-[1.02]">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground fade-in-title">
+                    {t.about.mission}
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground text-justified">
+                    {t.about.missionText}
+                  </p>
+                </div>
+
+                <div className="neuo-card p-4 sm:p-6 transition-all duration-300 hover:scale-[1.02]">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground fade-in-title">
+                    {t.about.vision}
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground text-justified">
+                    {t.about.visionText}
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline px-4">
+              {t.features.title}
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title px-4">
+              {t.features.subtitle}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <TarjetaCaracteristica
+              icono={ShieldCheck}
+              titulo={t.features.quality.title}
+              descripcion={t.features.quality.description}
+              variante="glass"
+            />
+            <TarjetaCaracteristica
+              icono={Award}
+              titulo={t.features.experience.title}
+              descripcion={t.features.experience.description}
+              variante="neuo"
+            />
+            <TarjetaCaracteristica
+              icono={Factory}
+              titulo={t.features.technology.title}
+              descripcion={t.features.technology.description}
+              variante="glass"
+            />
+            <TarjetaCaracteristica
+              icono={Leaf}
+              titulo={t.features.sustainability.title}
+              descripcion={t.features.sustainability.description}
+              variante="neuo"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8 sm:py-10 md:py-12 bg-muted/30 w-full overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="glass-surface rounded-lg overflow-hidden hover-smooth">
+              <img
+                src={extrusionImage}
+                alt="Proceso de extrusión"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="glass-surface rounded-lg overflow-hidden hover-smooth">
+              <img
+                src={galleryImage}
+                alt="Planta de producción"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="productos" className="py-12 sm:py-16 md:py-20 bg-background w-full overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline px-4">
+              {t.products.title}
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto fade-in-title px-4">
+              {t.products.subtitle}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <TarjetaProducto
+              titulo={t.products.tubular.title}
+              descripcion={t.products.tubular.description}
+              especificaciones={t.products.tubular.specs}
+              imagen={product1}
+            />
+            <TarjetaProducto
+              titulo={t.products.industrial.title}
+              descripcion={t.products.industrial.description}
+              especificaciones={t.products.industrial.specs}
+              imagen={product2}
+            />
+            <TarjetaProducto
+              titulo={t.products.custom.title}
+              descripcion={t.products.custom.description}
+              especificaciones={t.products.custom.specs}
+              imagen={product3}
+            />
+          </div>
+        </div>
+      </section>
+
+      <SeccionContacto />
+
+      <footer className="bg-secondary text-secondary-foreground py-8">
+        <div className="container mx-auto px-4 text-center space-y-2">
+          <p className="text-sm">
+            © {new Date().getFullYear()} POLYPACK. {t.footer.rights}
+          </p>
+          <p className="text-sm">
+            {t.footer.rif}
+          </p>
+          <p className="text-sm">
+            {t.footer.developedBy}{" "}
+            <a
+              href="https://www.solware.agency"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium transition-all"
+            >
+              Solware
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -62,10 +62,6 @@ export interface Translations {
       specs: string[];
     };
   };
-  gallery: {
-    title: string;
-    subtitle: string;
-  };
   contact: {
     title: string;
     subtitle: string;
@@ -191,10 +187,6 @@ export const translations: Record<Language, Translations> = {
         ],
       },
     },
-    gallery: {
-      title: '¡Conócenos!',
-      subtitle: 'Un vistazo a nuestras instalaciones y equipo',
-    },
     contact: {
       title: '¡Conectemos!',
       subtitle: 'Estamos aquí para ayudarte',
@@ -297,10 +289,6 @@ export const translations: Record<Language, Translations> = {
           'Personalized service',
         ],
       },
-    },
-    gallery: {
-      title: 'Get to Know Us!',
-      subtitle: 'A glimpse of our facilities and team',
     },
     contact: {
       title: 'Let\'s Connect!',

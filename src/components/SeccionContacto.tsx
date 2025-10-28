@@ -77,12 +77,20 @@ const SeccionContacto = () => {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-foreground text-sm sm:text-base">{t.contact.info.phone}</p>
-                    <a
-                      href={`tel:${CONTACT_CONFIG.phone}`}
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm break-all"
-                    >
-                      +58 412-9395171
-                    </a>
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href="tel:+584129395171"
+                        className="text-muted-foreground hover:text-primary transition-colors text-sm break-all"
+                      >
+                        +58 412-9395171
+                      </a>
+                      <a
+                        href="tel:+582129459445"
+                        className="text-muted-foreground hover:text-primary transition-colors text-sm break-all"
+                      >
+                        0212-9459445
+                      </a>
+                    </div>
                   </div>
                 </div>
 

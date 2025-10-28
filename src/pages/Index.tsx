@@ -11,7 +11,7 @@ import { WHATSAPP_CONFIG } from "@/config/constants";
 import heroImage from "@/assets/factory-hero.webp";
 const aboutImage = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2014.webp";
 import extrusionImage from "@/assets/factory-extrusion.webp";
-import galleryImage from "@/assets/factory-nosotros.webp";
+const galleryImage = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2003.webp";
 import product1 from "@/assets/product-1.webp";
 import product2 from "@/assets/product-2.webp";
 import product3 from "@/assets/product-3.webp";

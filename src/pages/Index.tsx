@@ -9,7 +9,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { trackWhatsAppClick } from "@/lib/analytics";
 import { WHATSAPP_CONFIG } from "@/config/constants";
 import heroImage from "@/assets/factory-hero.webp";
-import aboutImage from "@/assets/factory-gallery.webp";
+const aboutImage = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2014.webp";
 import extrusionImage from "@/assets/factory-extrusion.webp";
 import galleryImage from "@/assets/factory-nosotros.webp";
 import product1 from "@/assets/product-1.webp";

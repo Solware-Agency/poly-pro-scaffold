@@ -12,7 +12,7 @@ import heroImage from "@/assets/factory-hero.webp";
 const aboutImage = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2014.webp";
 import extrusionImage from "@/assets/factory-extrusion.webp";
 const galleryImage = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2003.webp";
-import product1 from "@/assets/product-1.webp";
+const product1 = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2016.webp";
 const product2 = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2012.webp";
 const product3 = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2001%20.webp";
 

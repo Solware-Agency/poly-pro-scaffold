@@ -203,8 +203,8 @@ export const translations: Record<Language, Translations> = {
       emailPlaceholder: 'johndoe@gmail.com',
       messagePlaceholder: 'Escribe tu mensaje aquí',
       send: 'Te contactaremos pronto',
-      scheduleWeekdays: 'Lunes a Viernes: 8:00 AM - 5:00 PM',
-      scheduleSaturday: 'Sábados: 8:00 AM - 12:00 PM',
+      scheduleWeekdays: 'Lunes a Jueves: 8:00 AM - 4:00 PM',
+      scheduleSaturday: 'Viernes: 8:00 AM - 5:00 PM',
     },
     footer: {
       rights: 'Todos los derechos reservados.',
@@ -306,8 +306,8 @@ export const translations: Record<Language, Translations> = {
       emailPlaceholder: 'johndoe@gmail.com',
       messagePlaceholder: 'Write your message here',
       send: 'We Will Contact You Soon',
-      scheduleWeekdays: 'Monday to Friday: 8:00 AM - 5:00 PM',
-      scheduleSaturday: 'Saturdays: 8:00 AM - 12:00 PM',
+      scheduleWeekdays: 'Monday to Thursday: 8:00 AM - 4:00 PM',
+      scheduleSaturday: 'Friday: 8:00 AM - 5:00 PM',
     },
     footer: {
       rights: 'All rights reserved.',

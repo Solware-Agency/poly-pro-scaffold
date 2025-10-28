@@ -27,6 +27,14 @@
     display: none;
   }
 
+  html.dark {
+    color-scheme: light;
+  }
+
+  html:not(.dark) {
+    color-scheme: light;
+  }
+
   @media (max-width: 1024px) {
     body {
       scrollbar-width: none;

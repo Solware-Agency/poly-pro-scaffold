@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import { useRef } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useLanguage } from "@/context/LanguageContext";
@@ -23,17 +22,13 @@ const GALLERY_IMAGES = [
 const CarruselConocenos = () => {
   const { t } = useLanguage();
 
-  const autoplayPlugin = Autoplay({
-    delay: 2000,
-    stopOnInteraction: false,
-    stopOnMouseEnter: false,
-  });
-
-  useEffect(() => {
-    return () => {
-      autoplayPlugin.stop();
-    };
-  }, [autoplayPlugin]);
+  const autoplayPlugin = useRef(
+    Autoplay({
+      delay: 2000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false,
+    })
+  );
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-background w-full overflow-hidden">
@@ -53,7 +48,7 @@ const CarruselConocenos = () => {
               align: "start",
               loop: true,
             }}
-            plugins={[autoplayPlugin]}
+            plugins={[autoplayPlugin.current]}
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">

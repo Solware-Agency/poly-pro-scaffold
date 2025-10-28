@@ -14,7 +14,7 @@ import extrusionImage from "@/assets/factory-extrusion.webp";
 const galleryImage = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2003.webp";
 import product1 from "@/assets/product-1.webp";
 const product2 = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2012.webp";
-import product3 from "@/assets/product-3.webp";
+const product3 = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2001%20.webp";
 
 const VIDEO_SOURCE = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Polypack%20Vid.%20Final%20(1)%20(1).mp4";
 

@@ -2,6 +2,7 @@ import { ShieldCheck, Leaf, Factory, Award } from "lucide-react";
 import Navegacion from "@/components/Navegacion";
 import TarjetaCaracteristica from "@/components/TarjetaCaracteristica";
 import TarjetaProducto from "@/components/TarjetaProducto";
+import CarruselConocenos from "@/components/CarruselConocenos";
 import SeccionContacto from "@/components/SeccionContacto";
 import BotonWhatsApp from "@/components/BotonWhatsApp";
 import { Button } from "@/components/ui/button";
@@ -210,6 +211,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <CarruselConocenos />
 
       <SeccionContacto />
 

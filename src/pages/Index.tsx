@@ -16,7 +16,7 @@ import product1 from "@/assets/product-1.webp";
 import product2 from "@/assets/product-2.webp";
 import product3 from "@/assets/product-3.webp";
 
-const VIDEO_SOURCE = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Video_polypack.mp4";
+const VIDEO_SOURCE = "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Polypack%20Vid.%20Final%20(1)%20(1).mp4";
 
 const Index = () => {
   const { t } = useLanguage();

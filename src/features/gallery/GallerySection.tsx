@@ -6,20 +6,9 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useLanguage } from "@/context/LanguageContext";
+import { ASSET_URLS } from "@/config/assets";
 
-const GALLERY_IMAGES = [
-  "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2015.webp",
-  "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2013.webp",
-  "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2011.webp",
-  "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2010.webp",
-  "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2009.webp",
-  "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2008.webp",
-  "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2005.webp",
-  "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2004.webp",
-  "https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/Polypack/Foto%2001%20.webp",
-];
-
-const CarruselConocenos = () => {
+const GallerySection = () => {
   const { t } = useLanguage();
 
   const autoplayPlugin = useRef(
@@ -52,7 +41,7 @@ const CarruselConocenos = () => {
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
-              {GALLERY_IMAGES.map((image, index) => (
+              {ASSET_URLS.gallery.map((image, index) => (
                 <CarouselItem
                   key={index}
                   className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
@@ -77,4 +66,4 @@ const CarruselConocenos = () => {
   );
 };
 
-export default CarruselConocenos;
+export default GallerySection;

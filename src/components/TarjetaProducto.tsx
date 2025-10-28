@@ -1,26 +1,17 @@
 import { useLanguage } from "@/context/LanguageContext";
-
-interface TarjetaProductoProps {
-  titulo: string;
-  descripcion: string;
-  especificaciones: string[];
-  imagen?: string;
-}
-
-const CARD_CLASSES = "glass-surface rounded-lg overflow-hidden hover:scale-[1.02] transition-[transform,box-shadow,backdrop-filter] duration-500 ease-out hover:shadow-xl will-change-transform w-full max-w-full";
-const IMAGE_CONTAINER_CLASSES = "h-40 sm:h-48 bg-muted overflow-hidden w-full";
-const IMAGE_CLASSES = "w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105 max-w-full";
+import { CARD_STYLES } from "@/config/styles";
+import type { TarjetaProductoProps } from "@/types/components";
 
 const TarjetaProducto = ({ titulo, descripcion, especificaciones, imagen }: TarjetaProductoProps) => {
   const { t } = useLanguage();
   return (
-    <div className={CARD_CLASSES}>
+    <div className={CARD_STYLES.product.base}>
       {imagen && (
-        <div className={IMAGE_CONTAINER_CLASSES}>
+        <div className={CARD_STYLES.product.imageContainer}>
           <img
             src={imagen}
             alt={titulo}
-            className={IMAGE_CLASSES}
+            className={CARD_STYLES.product.image}
           />
         </div>
       )}

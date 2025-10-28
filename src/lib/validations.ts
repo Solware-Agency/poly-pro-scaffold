@@ -1,3 +1,5 @@
+import type { ContactFormData, ValidationResult } from '@/types';
+
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const validateEmail = (email: string): boolean => {
@@ -7,17 +9,6 @@ export const validateEmail = (email: string): boolean => {
 export const validateRequired = (value: string): boolean => {
   return value.trim().length > 0;
 };
-
-export interface ContactFormData {
-  nombre: string;
-  email: string;
-  mensaje: string;
-}
-
-export interface ValidationResult {
-  isValid: boolean;
-  error?: string;
-}
 
 const ERROR_MESSAGES = {
   nameRequired: "Por favor, ingresa tu nombre",

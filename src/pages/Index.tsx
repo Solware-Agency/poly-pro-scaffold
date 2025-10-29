@@ -3,6 +3,7 @@ import Navegacion from "@/components/Navegacion";
 import TarjetaCaracteristica from "@/components/TarjetaCaracteristica";
 import TarjetaProducto from "@/components/TarjetaProducto";
 import SeccionContacto from "@/components/SeccionContacto";
+import CarouselSection from "@/components/carouselSection";
 import BotonWhatsApp from "@/components/BotonWhatsApp";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
@@ -210,6 +211,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <CarouselSection />
 
       <SeccionContacto />
 

@@ -42,7 +42,7 @@ const SeccionContacto = () => {
   };
   
   return (
-    <section id="contacto" className="py-12 sm:py-16 md:py-20 bg-muted/30 w-full overflow-hidden">
+    <section id="contacto" className="py-12 sm:py-16 md:py-20 bg-background w-full overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground fade-in-title title-underline px-4">

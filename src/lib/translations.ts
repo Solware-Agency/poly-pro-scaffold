@@ -62,6 +62,10 @@ export interface Translations {
       specs: string[];
     };
   };
+  carousel: {
+    title: string;
+    subtitle: string;
+  };
   contact: {
     title: string;
     subtitle: string;
@@ -188,6 +192,10 @@ export const translations: Record<Language, Translations> = {
         ],
       },
     },
+    carousel: {
+      title: 'Conócenos',
+      subtitle: 'Conoce nuestra empresa a través de nuestras imágenes',
+    },
     contact: {
       title: '¡Conectemos!',
       subtitle: 'Estamos aquí para ayudarte',
@@ -291,6 +299,10 @@ export const translations: Record<Language, Translations> = {
           'Personalized service',
         ],
       },
+    },
+    carousel: {
+      title: 'Know Us',
+      subtitle: 'Discover our company through our images',
     },
     contact: {
       title: 'Let\'s Connect!',

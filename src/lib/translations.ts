@@ -74,6 +74,7 @@ export interface Translations {
     name: string;
     email: string;
     message: string;
+    formTitle: string;
     namePlaceholder: string;
     emailPlaceholder: string;
     messagePlaceholder: string;
@@ -196,13 +197,14 @@ export const translations: Record<Language, Translations> = {
         phone: 'Teléfono',
         schedule: 'Horario de Atención',
       },
+      formTitle: 'Formulario de Contacto',
       name: 'Nombre',
       email: 'Correo Electrónico',
       message: 'Mensaje',
       namePlaceholder: 'John Doe',
       emailPlaceholder: 'johndoe@gmail.com',
       messagePlaceholder: 'Escribe tu mensaje aquí',
-      send: 'Te contactaremos pronto',
+      send: 'Enviar',
       scheduleWeekdays: 'Lunes a Jueves: 8:00 AM - 4:00 PM',
       scheduleSaturday: 'Viernes: 8:00 AM - 5:00 PM',
     },
@@ -302,6 +304,7 @@ export const translations: Record<Language, Translations> = {
       name: 'Name',
       email: 'Email',
       message: 'Message',
+      formTitle: 'Contact Form',
       namePlaceholder: 'John Doe',
       emailPlaceholder: 'johndoe@gmail.com',
       messagePlaceholder: 'Write your message here',

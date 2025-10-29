@@ -1,25 +1,18 @@
-import type { Config } from "tailwindcss";
-
+/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{ts,tsx}',
+  ],
   prefix: "",
   theme: {
     container: {
       center: true,
-      padding: {
-        DEFAULT: "1rem",
-        sm: "1.5rem",
-        md: "2rem",
-        lg: "3rem",
-        xl: "4rem",
-        "2xl": "5rem",
-      },
+      padding: "2rem",
       screens: {
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
         "2xl": "1400px",
       },
     },
@@ -33,7 +26,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -65,16 +57,6 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      boxShadow: {
-        sm: "var(--shadow-sm)",
-        md: "var(--shadow-md)",
-        lg: "var(--shadow-lg)",
-        xl: "var(--shadow-xl)",
-        glow: "var(--shadow-glow)",
-        glass: "var(--glass-shadow)",
-        "neuo-light": "var(--neuo-shadow-light)",
-        "neuo-dark": "var(--neuo-shadow-dark)",
-      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -84,40 +66,20 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "fade-in": {
-          "0%": { opacity: "0", transform: "translateY(-8px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        "slide-in": {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(0)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.5s ease-in-out",
-        "fade-up": "fade-up 0.6s ease-out",
-        "slide-in": "slide-in 0.4s ease-out",
+        scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },
-      backgroundImage: {
-        "gradient-primary": "var(--gradient-primary)",
-        "gradient-subtle": "var(--gradient-subtle)",
-        "gradient-dark": "var(--gradient-dark)",
-      },
-      zIndex: {
-        base: "var(--z-base)",
-        header: "var(--z-header)",
-        modal: "var(--z-modal)",
-        toast: "var(--z-toast)",
-        whatsapp: "var(--z-whatsapp)",
-        tooltip: "var(--z-tooltip)",
+      keyframes: {
+        scroll: {
+          to: {
+            transform: 'translate(calc(-50% - 0.5rem))',
+          },
+        },
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+}

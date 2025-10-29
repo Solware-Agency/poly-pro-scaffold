@@ -55,7 +55,7 @@ const SeccionContacto = () => {
         
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className="space-y-6 w-full max-w-full">
-            <div className="glass-surface p-4 sm:p-6 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full">
+            <div className="glass-surface p-4 sm:p-6 rounded-lg hover:scale-[1.02] hover:shadow-xl hover:-translate-y-1 w-full max-w-full transition-[transform,box-shadow] duration-500 ease-out">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground fade-in-title">
                 {t.contact.info.title}
               </h3>
@@ -136,7 +136,7 @@ const SeccionContacto = () => {
           </div>
           <div className="glass-surface p-4 sm:p-6 md:p-8 rounded-lg transition-[transform,box-shadow] duration-500 ease-out hover:scale-[1.01] hover:shadow-xl w-full max-w-full">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground fade-in-title">
-              {t.contact.send}
+              {t.contact.formTitle}
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-4">

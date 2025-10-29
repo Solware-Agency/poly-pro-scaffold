@@ -6,7 +6,7 @@ import { LanguageSelector } from "./LanguageSelector";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { SCROLL_CONFIG } from "@/config/constants";
 
-const NAV_SECTIONS = ["inicio", "nosotros", "productos", "contacto"] as const;
+const NAV_SECTIONS = ["inicio", "nosotros", "productos", "contacto"];
 
 const Navegacion = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);

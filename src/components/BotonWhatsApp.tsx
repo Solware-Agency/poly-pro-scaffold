@@ -1,6 +1,7 @@
-import { MessageCircle } from "lucide-react";
-import { trackWhatsAppClick } from "@/lib/analytics";
-import { WHATSAPP_CONFIG } from "@/config/constants";
+import { useEffect, useState } from 'react';
+import { MessageCircle } from 'lucide-react';
+import { trackWhatsAppClick } from '@/lib/analytics';
+import { WHATSAPP_CONFIG } from '@/config/constants';
 
 const BUTTON_CLASSES = `
   fixed bottom-20 right-4 sm:bottom-6 sm:right-6
@@ -29,7 +30,10 @@ const TOOLTIP_CLASSES = `
   z-tooltip
 `;
 
+const SHOW_AFTER_PX = 240; // umbral de scroll para mostrar el botón
+
 const BotonWhatsApp = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const message = encodeURIComponent(WHATSAPP_CONFIG.defaultMessage.es);
   const whatsappUrl = `https://wa.me/${WHATSAPP_CONFIG.number}?text=${message}`;
 
@@ -37,24 +41,42 @@ const BotonWhatsApp = () => {
     trackWhatsAppClick();
   };
 
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      if (y > SHOW_AFTER_PX) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    // Estado inicial por si se entra ya scrolleado
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <a
       href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Abrir chat de WhatsApp"
-      className={BUTTON_CLASSES}
-      title="Contactar por WhatsApp"
+      target='_blank'
+      rel='noopener noreferrer'
+      aria-label='Abrir chat de WhatsApp'
+      className={`${BUTTON_CLASSES} ${
+        isVisible
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-3 pointer-events-none'
+      }`}
+      title='Contactar por WhatsApp'
       onClick={handleClick}
     >
       <MessageCircle
-        className="w-7 h-7 md:w-8 md:h-8 text-white group-hover:rotate-12 transition-transform duration-300"
+        className='w-7 h-7 md:w-8 md:h-8 text-white group-hover:rotate-12 transition-transform duration-300'
         strokeWidth={2}
       />
 
-      <span className={TOOLTIP_CLASSES}>
-        Contáctanos por WhatsApp
-      </span>
+      <span className={TOOLTIP_CLASSES}>Contáctanos por WhatsApp</span>
     </a>
   );
 };

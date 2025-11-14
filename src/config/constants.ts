@@ -1,8 +1,8 @@
 export const CONTACT_CONFIG = {
   phone: '+584129395171',
   email: 'administracion@plasticospolypack.com',
-  instagram: 'https://instagram.com/polypack',
-  instagramHandle: '@polypack',
+  instagram: 'https://www.instagram.com/polypackve?igsh=MWVwZXBpcnBmd3V5ZQ%3D%3D&utm_source=qr',
+  instagramHandle: '@polypackve',
   location: 'Calle La Pedrera, Edificio ENEVA, Piso Sótano 1, Local Sótano 1, Urbanización Industrial Guaicay, Las Minas de Baruta, Miranda',
 } as const;
 
